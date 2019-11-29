@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<!--<%@ page isErrorPage="true" %>-->
+
 
 <html lang="en" class="wide wow-animation">
 <head>
-    <title>503</title>
+    <title>404</title>
     <c:import url="head-part.jsp"/>
 </head>
 <body>
@@ -14,7 +16,7 @@
     <header class="page-head">
         <section>
             <div class="shell text-center">
-                <div class="brand-wrap"><a href="" class="brand"><img src="images/logo-white-250x40.png" alt="" width="250" height="40"/></a></div>
+                <div class="brand-wrap"><a href="" class="brand"><img src="spring:message codeimages/logo-white-250x40.png" alt="" width="250" height="40"/></a></div>
             </div>
         </section>
     </header>
@@ -23,12 +25,12 @@
             <div class="shell">
                 <div class="range range-sm-center">
                     <div class="cell-md-10 cell-lg-8">
-                        <h5 class="h5-variant-1"><spring:message code="temporary.unavailable"/></h5>
-                        <div class="text-extra-big">503</div>
-                        <p class="text-style-2"><spring:message code="offline"/><br>
-                            <spring:message code="come.back"/></p>
+                        <h5 class="h5-variant-1"><spring:message code="not.found"/></h5>
+                        <div class="text-extra-big">404</div>
+                        <p class="text-style-2"><spring:message code="have.mistyped"/></p>
                         <div class="offset-top-35 offset-sm-top-50">
-                            <div class="group-xl"><a href="" class="btn btn-primary-variant-1 btn-mod-1"><spring:message code="back.home"/></a><a href="contacts" class="btn btn-white-outline btn-mod-2"><spring:message code="contact.us"/></a></div>
+                            <div class="group-xl"><a href="" class="btn btn-primary-variant-1 btn-mod-1"><spring:message code="back.home"/></a>
+                                <a href="contacts" class="btn btn-white-outline btn-mod-2"><spring:message code="contact.us"/></a></div>
                         </div>
                     </div>
                 </div>

@@ -270,7 +270,7 @@
                          data-loop="true" data-margin="30" data-nav="false" data-dots="true" data-md-dots-each="2"
                          class="owl-carousel">
 
-                        <c:forEach items="${responses}" var="responses">
+                        <c:forEach items="${feedback}" var="feedback">
                             <div class="item">
                                 <blockquote class="quote-variant-1">
                                     <div class="quote-meta">
@@ -279,13 +279,13 @@
                                                 <figure class="quote-image"><img src="images/defaultuser.jpg" alt=""
                                                                                  width="47" height="47"/></figure>
                                             </div>
-                                            <div class="unit-body"><cite>${responses.customer.name}</cite>
-                                                <p class="small">${responses.date}</p>
+                                            <div class="unit-body"><cite>${feedback.user.firstName} ${feedback.user.lastName}</cite>
+                                                <p class="small">${feedback.date}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="quote-body">
-                                        <p><q>${responses.response}</q></p>
+                                        <p><q>${feedback.text}</q></p>
                                     </div>
                                 </blockquote>
                             </div>

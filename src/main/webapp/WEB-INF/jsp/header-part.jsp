@@ -3,6 +3,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
+
 <header class="page-head">
 <div class="rd-navbar-wrap">
           <nav data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-stick-up-clone="false" data-md-stick-up-offset="199px" data-lg-stick-up-offset="199px" class="rd-navbar rd-navbar-corporate rd-navbar-dark">
@@ -68,7 +69,7 @@
         <div class="rd-navbar-outer-panel">
             <div class="rd-navbar-nav-wrap">
                 <ul class="rd-navbar-nav">
-                    <li class="active"><a href="">
+                    <li class="active"><a href="/">
                         <spring:message code="home"/>
                     </a></li>
                     <li><a href="services">
@@ -108,8 +109,8 @@
                             <li><a href="team">
                                 <spring:message code="our.team"/>
                             </a></li>
-                            <li><a href="responses">
-                                <spring:message code="responses"/>
+                            <li><a href="feedback">
+                                <spring:message code="feedback"/>
                             </a></li>
                             <li><a href="privacy">
                                 <spring:message code="privacy.policy"/>
@@ -140,8 +141,8 @@
                 <ul class="rd-navbar-nav">
 
                 <li>
-                        <c:choose>
-                            <c:when test="${user.role=='ADMIN'}">
+
+                            <security:authorize access="hasRole('ROLE_ADMIN')">
                                 <a href="admin">
                                     <spring:message code="account"/>
                                 </a>
@@ -160,47 +161,47 @@
                                     </a></li>
                                 </ul>
 
-                            </c:when>
-                            <c:when test="${user.role=='MANAGER'}">
+                            </security:authorize>
+                            <security:authorize access="hasRole('ROLE_MANAGER')">
                                 <a href="manager">
                                     <spring:message code="account"/>
                                 </a>
-                            </c:when>
-                            <c:when test="${user.role=='MASTER'}">
+                            </security:authorize>
+                            <security:authorize access="hasRole('ROLE_MASTER')">
                                 <a href="master">
                                     <spring:message code="account"/>
                                 </a>
-                            </c:when>
-                            <c:when test="${user.role=='CUSTOMER'}">
+                            </security:authorize>
+                            <security:authorize access="hasRole('ROLE_CUSTOMER')">
                                 <a href="user">
                                     <spring:message code="account"/>
                                 </a>
-                            </c:when>
-                            <c:otherwise>
+                            </security:authorize>
+                            <security:authorize access="isAnonymous()">
                                 <a href=""></a>
-                            </c:otherwise>
-                        </c:choose>
+                            </security:authorize>
+
 
                  
                 </li>
                 <li>
-                    <c:choose>
-                        <c:when test="${not empty user}">
+
+                        <security:authorize access="isAuthenticated()">
                             <a href="logout">
                                 <spring:message code="logout"/>
                             </a>
-                        </c:when>
-                        <c:otherwise>
-                            <a href="login-register">
+                        </security:authorize>
+                        <security:authorize access="isAnonymous()">
+                            <a href="login">
                                 <spring:message code="login"/>
                             </a>
-                        </c:otherwise>
-                    </c:choose>
+                        </security:authorize>
+
 
                
             </li>
-            <li><a href="language?locale=en" class="text-uppercase">en</a>
-                <a href="language?locale=ua" class="text-uppercase">ua</a>
+            <li><a href="?locale=en" class="text-uppercase">en</a>
+                <a href="?locale=uk_UA" class="text-uppercase">ua</a>
 			</li>
         </ul>
 

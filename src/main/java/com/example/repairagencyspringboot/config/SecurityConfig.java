@@ -13,6 +13,7 @@ import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AndRequestMatcher;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.annotation.Resource;
@@ -53,16 +54,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
                 http.csrf().disable().headers().frameOptions().disable().and().authorizeRequests()
-                        .antMatchers("/", "/index", "/login-registration", "/h2-console/**", "/css/**", "/js/**", "/images/**",
-                                "/fonts/**")
+                        .antMatchers("/gallery-masonry","/blog-post","/blog-masonry",
+                                "/contacts","/services","/about","/", "/index","/feedback",
+                                 "/h2-console/**", "/css/**", "/js/**",
+                                "/images/**","/privacy","/team","/team-member-profile",
+                                "/fonts/**","/404", "/error", "/qwe","/news","/register")
+
+//                        .antMatchers("/admin", "/user", "/manager", "/master", "/feedback", "/order").hasRole("ADMIN")
                         .permitAll()
                         .anyRequest().authenticated().and()
                         .formLogin()
-                        .loginPage("/login-registration").permitAll()
+                        .loginPage("/login").permitAll()
                         .and()
                         .logout().invalidateHttpSession(true)
                         .clearAuthentication(true)
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                        .logoutSuccessUrl("/");
+                        .logoutSuccessUrl("/")
+                        ;
         }
 }

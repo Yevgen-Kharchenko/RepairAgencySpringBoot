@@ -6,7 +6,7 @@
 
 <html lang="en" class="wide wow-animation">
 <head>
-    <title></title>
+    <title><spring:message code="blog"/></title>
     <c:import url="head-part.jsp"/>
 </head>
 

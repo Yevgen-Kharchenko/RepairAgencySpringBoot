@@ -20,7 +20,7 @@
                 <div class="range">
                     <div class="cell-md-10 cell-lg-8">
                         <h5><spring:message code="leave"/></h5>
-                        <form data-form-output="form-output-global" data-form-type="contact" method="post" action="responses" class="rd-mailform">
+                        <form data-form-output="form-output-global" data-form-type="contact" method="post" action="feedback" class="rd-mailform">
                             <div class="range">
                                
                                 <div class="cell-xs-12 offset-top-18">
@@ -52,25 +52,25 @@
                          data-loop="true" data-margin="30" data-nav="false" data-dots="true" data-md-dots-each="2"
                          class="owl-carousel">
 
-                        <c:forEach items="${responses}" var="responses">
-                        <div class="item">
-                            <blockquote class="quote-variant-1">
-                                <div class="quote-meta">
-                                    <div class="unit unit-spacing-xs unit-middle unit-horizontal">
-                                        <div class="unit-left">
-                                            <figure class="quote-image"><img src="images/defaultuser.jpg" alt=""
-                                                                             width="47" height="47"/></figure>
-                                        </div>
-                                        <div class="unit-body"><cite>${responses.customer.name}</cite>
-                                            <p class="small">${responses.date}</p>
+                        <c:forEach items="${feedback}" var="feedback">
+                            <div class="item">
+                                <blockquote class="quote-variant-1">
+                                    <div class="quote-meta">
+                                        <div class="unit unit-spacing-xs unit-middle unit-horizontal">
+                                            <div class="unit-left">
+                                                <figure class="quote-image"><img src="images/defaultuser.jpg" alt=""
+                                                                                 width="47" height="47"/></figure>
+                                            </div>
+                                            <div class="unit-body"><cite>${feedback.user.firstName} ${feedback.user.lastName}</cite>
+                                                <p class="small">${feedback.date}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="quote-body">
-                                    <p><q>${responses.response}</q></p>
-                                </div>
-                            </blockquote>
-                        </div>
+                                    <div class="quote-body">
+                                        <p><q>${feedback.text}</q></p>
+                                    </div>
+                                </blockquote>
+                            </div>
                         </c:forEach>
 
                     </div>

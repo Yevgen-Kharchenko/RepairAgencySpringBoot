@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <html lang="en" class="wide wow-animation">
 <head>
@@ -31,14 +32,16 @@
                             <div class="resp-tabs-container offset-top-40">
                                 <div class="animated fadeIn">
 
-                                    <form class="rd-mailform text-left" action="login" method="post">
+                                    <form:form class=" text-left" action="login" method="post">
                                         <div class="form-group">
-                                            <label for="login-email" class="form-label-outside"><spring:message code="email"/></label>
-                                            <input id="login-email" type="text" name="login" data-constraints="@Required" class="form-control">
+                                            <label for="username" class="form-label-outside"><spring:message code="email"/></label>
+                                            <form:input  path="username" type="text" name="login" data-constraints="@Required" class="form-control"/>
+                                            <form:errors path="username" cssClass="text-danger"/>
                                         </div>
                                         <div class="form-group">
-                                            <label for="login-password" class="form-label-outside"><spring:message code="password"/></label>
-                                            <input id="login-password" type="password" name="password" data-constraints="@Required" class="form-control">
+                                            <label for="password" class="form-label-outside"><spring:message code="password"/></label>
+                                            <form:input path="password"  type="password" name="password" data-constraints="@Required" class="form-control"/>
+                                            <form:errors path="password" cssClass="text-danger"/>
                                         </div>
                                         <div class="group group-middle offset-top-30 text-center text-xs-left">
                                             <button type="submit" class="btn btn-primary"><spring:message code="sign.in"/></button>
@@ -49,7 +52,7 @@
                                                 <li><a href="503" class="icon icon-xs icon-circle icon-white icon-filled-google fa-google"></a></li>
                                             </ul>
                                         </div>
-                                    </form>
+                                    </form:form>
                                 </div>
 
                                 <div class="animated fadeIn">
@@ -62,41 +65,7 @@
                                         </ul>
                                         <p class="offset-top-7"><spring:message code="or"/></p>
                                     </div>
-                                    <div class="offset-top-25">
-                                        <form class="rd-mailform text-left" action="register" method="post">
-											<div class="form-group">
-												<label for="contact-first-name" class="form-label-outside"><spring:message code="first.name"/></label>
-												<input id="contact-first-name" type="text" name="first-name" data-constraints="@Required" class="form-control">
-											</div>
-											<div class="form-group">
-												<label for="contact-last-name" class="form-label-outside"><spring:message code="last.name"/></label>
-												<input id="contact-last-name" type="text" name="last-name" data-constraints="@Required" class="form-control">
-											</div>
-											<div class="form-group">
-												<label for="contact-phone" class="form-label-outside"><spring:message code="phone"/></label>
-												<input id="contact-phone" type="text" name="phone" data-constraints="@Required @Numeric" class="form-control">
-											</div>
-                                            <div class="form-group">
-                                                <label for="register-username" class="form-label-outside">Username</label>
-                                                <input id="register-username" type="text" name="username" data-constraints="@Required" class="form-control">
-                                            </div>
-                                            <div class="form-group offset-top-18">
-                                                <label for="register-email" class="form-label-outside"><spring:message code="email"/></label>
-                                                <input id="register-email" type="text" name="login" data-constraints="@Email @Required" class="form-control">
-                                            </div>
-                                            <div class="form-group offset-top-18">
-                                                <label for="register-password" class="form-label-outside"><spring:message code="password"/></label>
-                                                <input id="register-password" type="password" name="password" data-constraints="@Required" class="form-control">
-                                            </div>
-											<div class="form-group offset-top-18">
-												<label for="register-confirm-password" class="form-label-outside"><spring:message code="confirm.password"/></label>
-												<input id="register-confirm-password" type="password" name="password" data-constraints="@Required" class="form-control">
-											</div>
-                                            <div class="offset-top-18 text-center">
-                                                <button type="submit" class="btn btn-primary"><spring:message code="register"/></button>
-                                            </div>
-                                        </form>
-                                    </div>
+
                                 </div>
                             </div>
 

@@ -1,5 +1,7 @@
 package com.example.repairagencyspringboot.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +16,7 @@ import java.util.Locale;
 
 @Configuration
 public class InternationalizationConfig implements WebMvcConfigurer {
+    private static final Logger LOG = LoggerFactory.getLogger(InternationalizationConfig.class);
 
     @Bean
     public MessageSource messageSource(){
@@ -35,5 +38,6 @@ public class InternationalizationConfig implements WebMvcConfigurer {
         LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
         interceptor.setParamName("locale");
         registry.addInterceptor(interceptor);
+        LOG.info("local"+interceptor);
     }
 }
