@@ -1,9 +1,12 @@
 package com.example.repairagencyspringboot.service;
 
+import com.example.repairagencyspringboot.config.InternationalizationConfig;
 import com.example.repairagencyspringboot.entity.User;
 import com.example.repairagencyspringboot.enums.Role;
 import com.example.repairagencyspringboot.form.RegistrationForm;
 import com.example.repairagencyspringboot.repository.UserRepo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +15,7 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+    private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
     @Resource
     private UserRepo userRepo;
     @Resource 
@@ -24,6 +28,7 @@ public class UserService {
     }
     
     public User registerUser(RegistrationForm form, Role role){
+        LOG.info("Register user");
         if (loginExist(form.getLogin())){
             return null;
         }
@@ -31,7 +36,7 @@ public class UserService {
         String password = passwordEncoder.encode(form.getPassword());
         
         User user = new User(form.getLogin(), password, form.getFirst_name(), form.getLast_name(), form.getPhone(), role);
-        
+        LOG.info("New user: "+user);
         return userRepo.save(user);
     }
     

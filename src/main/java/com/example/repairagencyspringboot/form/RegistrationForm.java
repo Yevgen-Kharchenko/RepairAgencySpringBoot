@@ -1,7 +1,7 @@
 package com.example.repairagencyspringboot.form;
 
 
-import javax.validation.constraints.NotNull;
+        import javax.validation.constraints.NotNull;
 
 public class RegistrationForm {
     @NotNull

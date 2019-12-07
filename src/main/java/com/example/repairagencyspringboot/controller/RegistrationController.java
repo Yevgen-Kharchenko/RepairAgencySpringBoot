@@ -1,6 +1,7 @@
 package com.example.repairagencyspringboot.controller;
 
 
+import com.example.repairagencyspringboot.entity.User;
 import com.example.repairagencyspringboot.enums.Role;
 import com.example.repairagencyspringboot.form.LoginForm;
 import com.example.repairagencyspringboot.form.RegistrationForm;
@@ -9,27 +10,47 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/register")
+@RequestMapping(value = "/registration")
 public class RegistrationController {
     private static final Logger LOG = LoggerFactory.getLogger(RegistrationController.class);
     @Resource
     private UserService userService;
-    private Role role = Role.CUSTOMER;
+    @Resource(name = "registrationValidator")
+    private Validator validator;
 
-    @GetMapping
-    public String register(Model model) {
-        RegistrationForm registrationForm = new RegistrationForm();
-        model.addAttribute("command", registrationForm);
-//        model.addAttribute("user",userService.registerUser(registrationForm,role));
-
-        return "register";
+    @InitBinder
+    private void initBinder(WebDataBinder binder){
+        binder.setValidator(validator);
     }
 
+    @GetMapping
+    public String getRegistrationPage(Model model){
+        LOG.info("Get Registration Page");
+        model.addAttribute("registrationForm", new RegistrationForm());
+        return "registration";
+    }
 
+    @PostMapping
+    public String registerUser(@Valid @ModelAttribute("registrationForm") RegistrationForm registrationForm, BindingResult error, Model model){
+        LOG.info("Form {}", registrationForm);
+        if(error.hasErrors()){
+            return "registration";
+        }
+        User user = userService.registerUser(registrationForm, Role.CUSTOMER);
+        if(user == null){
+            error.rejectValue("login", "registration.login.exist");
+            return "registration";
+        }
+        userService.validateUser(registrationForm.getLogin(), registrationForm.getPassword());
+        return "redirect:/";
+    }
 }

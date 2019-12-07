@@ -25,7 +25,7 @@
                                     <div class="unit-left">
                                         <figure><img src="images/team-11-370x370.jpg" alt="" width="350" height="350"/> </figure>
                                     </div>
-                                    <div class="unit-body"><a href="order" class="btn btn-primary"><spring:message code="make.an"/></a>
+                                    <div class="unit-body"><a href="orders" class="btn btn-primary"><spring:message code="make.an"/></a>
                                         <ul class="list">
                                             <li>
                                                 <div class="unit unit-horizontal unit-align-center unit-sm-align-left unit-md-align-center unit-middle unit-spacing-xxs">

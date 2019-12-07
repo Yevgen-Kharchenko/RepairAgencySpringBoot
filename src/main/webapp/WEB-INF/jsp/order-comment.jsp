@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h5><spring:message code="order.id"/>#5</h5>
+                        <h5><spring:message code="orders.id"/>#5</h5>
                         <hr>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
                                         <li>123-456-78-90</li>
                                     </ul>
                                 </div>
-                                <div class="pricing-table-footer"><a href="" class="btn btn-sm btn-primary"><spring:message code="cancel.order"/></a></div>
+                                <div class="pricing-table-footer"><a href="" class="btn btn-sm btn-primary"><spring:message code="cancel.orders"/></a></div>
 								
 								<c:choose>
                             <c:when test="${user.role=='ADMIN'}">

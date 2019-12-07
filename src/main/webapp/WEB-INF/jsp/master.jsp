@@ -26,7 +26,7 @@
                 <table class="table table-primary table-striped-variant-1">
                     <thead>
                     <tr>
-                        <th><spring:message code="order.id"/></th>
+                        <th><spring:message code="orders.id"/></th>
                         <th><spring:message code="date"/></th>
 						<th><spring:message code="repair.type"/></th>
                         <th><spring:message code="edit"/></th>
@@ -38,7 +38,7 @@
                         <td>2019-09-15</td>
                         <td>REFRIGERATOR</td>
                         <td>
-                            <a href="order-comment" class="search_link"><span
+                            <a href="orders-comment" class="search_link"><span
                                     class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                         </td>
                     </tr>
@@ -47,7 +47,7 @@
                         <td>2019-09-15</td>
                         <td>REFRIGERATOR</td>
                         <td>
-                            <a href="order-comment" class="search_link"><span
+                            <a href="orders-comment" class="search_link"><span
                                     class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                         </td>
                     </tr>
@@ -56,7 +56,7 @@
                         <td>2019-09-15</td>
                         <td>REFRIGERATOR</td>
                        <td>
-                            <a href="order-comment" class="search_link"><span
+                            <a href="orders-comment" class="search_link"><span
                                     class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                         </td>
                     </tr>
@@ -65,7 +65,7 @@
                         <td>2019-09-15</td>
                         <td>REFRIGERATOR</td>
                        <td>
-                            <a href="order-comment" class="search_link"><span
+                            <a href="orders-comment" class="search_link"><span
                                     class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                         </td>
                     </tr>

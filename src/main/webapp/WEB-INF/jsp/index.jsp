@@ -32,7 +32,7 @@
                                     <div class="swiper-slide-text">
                                         <h5 class="text-style-3"><spring:message code="industry.leader"/></h5>
                                     </div>
-                                    <div class="offset-top-35"><a href="order"
+                                    <div class="offset-top-35"><a href="orders"
                                                                   class="btn btn-primary btn-mod-1"><spring:message code="make.an"/></a></div>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                             <div class="range">
                                 <div class="cell-sm-8 cell-md-8 cell-lg-6">
                                     <h1><spring:message code="professional"/> </h1>
-                                    <div class="offset-top-35 offset-sm-top-65"><a href="order" class="btn btn-primary btn-mod-1"><spring:message code="make.an"/></a></div>
+                                    <div class="offset-top-35 offset-sm-top-65"><a href="orders" class="btn btn-primary btn-mod-1"><spring:message code="make.an"/></a></div>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                     <div class="swiper-slide-text">
                                         <h5 class="text-style-3"><spring:message code="we.offer"/></h5>
                                     </div>
-                                    <div class="offset-top-35"><a href="order"
+                                    <div class="offset-top-35"><a href="orders"
                                                                   class="btn btn-primary btn-mod-1"><spring:message code="make.an"/></a></div>
                                 </div>
                             </div>

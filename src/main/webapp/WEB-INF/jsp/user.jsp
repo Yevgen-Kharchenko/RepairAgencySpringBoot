@@ -27,7 +27,7 @@
                 <table class="table table-primary table-striped-variant-1">
                     <thead>
                     <tr>
-                        <th><spring:message code="order.id"/></th>
+                        <th><spring:message code="orders.id"/></th>
 						<th><spring:message code="date"/></th>
 						<th><spring:message code="repair.type"/></th>
                         <th><spring:message code="price"/></th>
@@ -43,7 +43,7 @@
 						<td>NEW</td>
                         <td>500,00</td>
                         <td>
-                            <a href="order-comment" class="search_link"><span
+                            <a href="orders-comment" class="search_link"><span
                                     class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                         </td>
                     </tr>
@@ -54,7 +54,7 @@
 						<td>OFFER</td>
                         <td>500,00</td>
                         <td>
-                            <a href="order-comment" class="search_link"><span
+                            <a href="orders-comment" class="search_link"><span
                                     class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                         </td>
                     </tr>
@@ -65,7 +65,7 @@
 						<td>IN_PROGRESS</td>
                         <td>500,00</td>
                         <td>
-                            <a href="order-comment" class="search_link"><span
+                            <a href="orders-comment" class="search_link"><span
                                     class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                         </td>
                     </tr>
@@ -76,7 +76,7 @@
 						<td>CLOSED</td>
                         <td>500,00</td>
                         <td>
-                            <a href="order-comment" class="search_link"><span
+                            <a href="orders-comment" class="search_link"><span
                                     class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                         </td>
                     </tr>

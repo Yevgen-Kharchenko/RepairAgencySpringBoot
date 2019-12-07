@@ -31,36 +31,36 @@
                             </ul>
                             <div class="resp-tabs-container offset-top-40">
                                 <div class="offset-top-25">
-                                    <form:form class="text-left" action="register" method="post">
+                                    <form:form class="text-left" action="registration" method="post" modelAttribute="registrationForm">
                                         <div class="form-group">
                                             <label for="first_name" class="form-label-outside"><spring:message code="first.name"/></label>
                                             <form:input  path="first_name" type="text" name="first-name" data-constraints="@Required" class="form-control"/>
-                                            <form:errors path="first_name" cssClass="text-danger"/>
+                                            <form:errors path="first_name" />
                                         </div>
                                         <div class="form-group">
                                             <label for="last_name" class="form-label-outside"><spring:message code="last.name"/></label>
                                             <form:input path="last_name" type="text" name="last-name" data-constraints="@Required" class="form-control"/>
-                                            <form:errors path="last_name" cssClass="text-danger"/>
+                                            <form:errors path="last_name" />
                                         </div>
                                         <div class="form-group">
                                             <label for="phone" class="form-label-outside"><spring:message code="phone"/></label>
                                             <form:input path="phone" type="text" name="phone" data-constraints="@Required @Numeric" class="form-control"/>
-                                            <form:errors path="phone" cssClass="text-danger"/>
+                                            <form:errors path="phone" />
                                         </div>
                                         <div class="form-group offset-top-18">
                                             <label for="login" class="form-label-outside"><spring:message code="email"/></label>
                                             <form:input path="login" type="text" name="login" data-constraints="@Email @Required" class="form-control"/>
-                                            <form:errors path="login" cssClass="text-danger"/>
+                                            <form:errors path="login" />
                                         </div>
                                         <div class="form-group offset-top-18">
                                             <label for="password" class="form-label-outside"><spring:message code="password"/></label>
                                             <form:input type="password" path="password" name="password" data-constraints="@Required" class="form-control"/>
-                                            <form:errors path="password" cssClass="text-danger"/>
+                                            <form:errors path="password" />
                                         </div>
                                         <div class="form-group offset-top-18">
                                             <label for="password_confirm" class="form-label-outside"><spring:message code="confirm.password"/></label>
                                             <form:input  path="password_confirm" type="password" name="password" data-constraints="@Required" class="form-control"/>
-                                            <form:errors path="password_confirm" cssClass="text-danger"/>
+                                            <form:errors path="password_confirm" />
                                         </div>
                                         <div class="offset-top-18 text-center">
                                             <button type="submit" class="btn btn-primary"><spring:message code="register"/></button>

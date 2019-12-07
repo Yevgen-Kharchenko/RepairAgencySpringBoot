@@ -55,10 +55,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         protected void configure(HttpSecurity http) throws Exception {
                 http.csrf().disable().headers().frameOptions().disable().and().authorizeRequests()
                         .antMatchers("/gallery-masonry","/blog-post","/blog-masonry",
-                                "/contacts","/services","/about","/", "/index","/feedback",
+                                "/contacts","/services","/about","/", "/index","/feedback/**",
                                  "/h2-console/**", "/css/**", "/js/**",
                                 "/images/**","/privacy","/team","/team-member-profile",
-                                "/fonts/**","/404", "/error", "/qwe","/news","/register")
+                                "/fonts/**","/404", "/error", "/qwe","/news","/registration")
 
 //                        .antMatchers("/admin", "/user", "/manager", "/master", "/feedback", "/order").hasRole("ADMIN")
                         .permitAll()

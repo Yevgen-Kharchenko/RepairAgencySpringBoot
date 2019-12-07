@@ -36,7 +36,7 @@
                                             <h3><spring:message code="ice.maker"/></h3>
                                         </div>
                                         <div class="box-image"><img src="images/services-1-146x156.png" alt="" width="146" height="156"/> </div>
-                                        <div class="box-content"><a href="order" class="btn btn-primary"><spring:message code="order.repair"/></a>
+                                        <div class="box-content"><a href="orders" class="btn btn-primary"><spring:message code="orders.repair"/></a>
                                             <address class="contact-info-inline">
                                                 <p><spring:message code="or.call"/></p>
                                                 <a href="callto:#" class="link link-md link-dark">1-800-1234-567</a>
@@ -67,7 +67,7 @@
                                             <h3><spring:message code="stove.repair"/></h3>
                                         </div>
                                         <div class="box-image"><img src="images/services-2-146x156.png" alt="" width="146" height="156"/> </div>
-                                        <div class="box-content"><a href="order" class="btn btn-primary"><spring:message code="order.repair"/></a>
+                                        <div class="box-content"><a href="orders" class="btn btn-primary"><spring:message code="orders.repair"/></a>
                                             <address class="contact-info-inline">
                                                 <p><spring:message code="or.call"/></p>
                                                 <a href="callto:#" class="link link-md link-dark">1-800-1234-567</a>
@@ -98,7 +98,7 @@
                                         <div class="box-header">
                                             <h3><spring:message code="appliance.parts"/></h3>
                                         </div>
-                                        <div class="box-content"><a href="order" class="btn btn-primary"><spring:message code="order.repair"/></a>
+                                        <div class="box-content"><a href="orders" class="btn btn-primary"><spring:message code="orders.repair"/></a>
                                             <address class="contact-info-inline">
                                                 <p><spring:message code="or.call"/></p>
                                                 <a href="callto:#" class="link link-md link-dark">1-800-1234-567</a>
@@ -115,7 +115,7 @@
                                             <h3><spring:message code="microwave.repair"/></h3>
                                         </div>
                                         <div class="box-image"><img src="images/services-3-146x156.png" alt="" width="146" height="156"/> </div>
-                                        <div class="box-content"><a href="order" class="btn btn-primary"><spring:message code="order.repair"/></a>
+                                        <div class="box-content"><a href="orders" class="btn btn-primary"><spring:message code="orders.repair"/></a>
                                             <address class="contact-info-inline">
                                                 <p><spring:message code="or.call"/></p>
                                                 <a href="callto:#" class="link link-md link-dark">1-800-1234-567</a>
@@ -148,7 +148,7 @@
                                             <h3><spring:message code="washer.repair"/></h3>
                                         </div>
                                         <div class="box-image"><img src="images/services-4-146x156.png" alt="" width="146" height="156"/> </div>
-                                        <div class="box-content"><a href="order" class="btn btn-primary"><spring:message code="order.repair"/></a>
+                                        <div class="box-content"><a href="orders" class="btn btn-primary"><spring:message code="orders.repair"/></a>
                                             <address class="contact-info-inline">
                                                 <p><spring:message code="or.call"/></p>
                                                 <a href="callto:#" class="link link-md link-dark">1-800-1234-567</a>
@@ -184,7 +184,7 @@
                                             <h3><spring:message code="refrigerator.repair"/></h3>
                                         </div>
                                         <div class="box-image"><img src="images/services-5-146x156.png" alt="" width="146" height="156"/> </div>
-                                        <div class="box-content"><a href="order" class="btn btn-primary"><spring:message code="order.repair"/></a>
+                                        <div class="box-content"><a href="orders" class="btn btn-primary"><spring:message code="orders.repair"/></a>
                                             <address class="contact-info-inline">
                                                 <p><spring:message code="or.call"/></p>
                                                 <a href="callto:#" class="link link-md link-dark">1-800-1234-567</a>
@@ -213,7 +213,7 @@
                                             <h3><spring:message code="range"/></h3>
                                         </div>
                                         <div class="box-image"><img src="images/services-6-146x156.png" alt="" width="146" height="156"/> </div>
-                                        <div class="box-content"><a href="order" class="btn btn-primary"><spring:message code="order.repair"/></a>
+                                        <div class="box-content"><a href="orders" class="btn btn-primary"><spring:message code="orders.repair"/></a>
                                             <address class="contact-info-inline">
                                                 <p><spring:message code="or.call"/></p>
                                                 <a href="callto:#" class="link link-md link-dark">1-800-1234-567</a>

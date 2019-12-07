@@ -6,7 +6,7 @@
 
 <html lang="en" class="wide wow-animation">
 <head>
-    <title><spring:message code="order"/></title>
+    <title><spring:message code="orders"/></title>
     <c:import url="head-part.jsp"/>
 </head>
 
@@ -18,7 +18,7 @@
             <div class="shell">
                 <div class="range">
                     <div class="cell-md-10 cell-lg-8">
-                        <h5><spring:message code="create.order"/></h5>
+                        <h5><spring:message code="create.orders"/></h5>
                         <hr>
                         <form data-form-output="form-output-global" data-form-type="contact" method="post" action="#" class="rd-mailform">
                             <div class="range">

@@ -44,7 +44,7 @@
                                                         <table class="table table-primary table-striped-variant-1">
                                                             <thead>
                                                             <tr>
-                                                                <th><spring:message code="order.id"/></th>
+                                                                <th><spring:message code="orders.id"/></th>
                                                                 <th><spring:message code="date"/></th>
                                                                 <th><spring:message code="repair.type"/></th>
                                                                 <th><spring:message code="first.name"/></th>
@@ -66,7 +66,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -80,7 +80,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -94,7 +94,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -108,7 +108,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -131,7 +131,7 @@
                                                         <table class="table table-primary table-striped-variant-1">
                                                             <thead>
                                                             <tr>
-                                                                <th><spring:message code="order.id"/></th>
+                                                                <th><spring:message code="orders.id"/></th>
                                                                 <th><spring:message code="date"/></th>
                                                                 <th><spring:message code="repair.type"/></th>
                                                                 <th><spring:message code="first.name"/></th>
@@ -153,7 +153,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -167,7 +167,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -181,7 +181,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -195,7 +195,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -218,7 +218,7 @@
                                                         <table class="table table-primary table-striped-variant-1">
                                                             <thead>
                                                             <tr>
-                                                                <th><spring:message code="order.id"/></th>
+                                                                <th><spring:message code="orders.id"/></th>
                                                                 <th><spring:message code="date"/></th>
                                                                 <th><spring:message code="repair.type"/></th>
                                                                 <th><spring:message code="first.name"/></th>
@@ -240,7 +240,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -254,7 +254,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -268,7 +268,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -282,7 +282,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -305,7 +305,7 @@
                                                         <table class="table table-primary table-striped-variant-1">
                                                             <thead>
                                                             <tr>
-                                                                <th><spring:message code="order.id"/></th>
+                                                                <th><spring:message code="orders.id"/></th>
                                                                 <th><spring:message code="date"/></th>
                                                                 <th><spring:message code="repair.type"/></th>
                                                                 <th><spring:message code="first.name"/></th>
@@ -327,7 +327,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -341,7 +341,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -355,7 +355,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -369,7 +369,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -392,7 +392,7 @@
                                                         <table class="table table-primary table-striped-variant-1">
                                                             <thead>
                                                             <tr>
-                                                                <th><spring:message code="order.id"/></th>
+                                                                <th><spring:message code="orders.id"/></th>
                                                                 <th><spring:message code="date"/></th>
                                                                 <th><spring:message code="repair.type"/></th>
                                                                 <th><spring:message code="first.name"/></th>
@@ -414,7 +414,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -428,7 +428,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -442,7 +442,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>
@@ -456,7 +456,7 @@
                                                                 <td>123-456-78-90</td>
                                                                 <td>500,00</td>
                                                                 <td>
-                                                                    <a href="order-comment" class="search_link"><span
+                                                                    <a href="orders-comment" class="search_link"><span
                                                                             class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
                                                                 </td>
                                                             </tr>

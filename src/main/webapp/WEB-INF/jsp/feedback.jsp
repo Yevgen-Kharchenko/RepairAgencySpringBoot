@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html lang="en" class="wide wow-animation">
 <head>
@@ -20,20 +21,20 @@
                 <div class="range">
                     <div class="cell-md-10 cell-lg-8">
                         <h5><spring:message code="leave"/></h5>
-                        <form data-form-output="form-output-global" data-form-type="contact" method="post" action="feedback" class="rd-mailform">
+                        <form:form data-form-output="form-output-global" method="post" action="feedback" modelAttribute="feedbackForm" >
                             <div class="range">
                                
                                 <div class="cell-xs-12 offset-top-18">
                                     <div class="form-group">
                                         <label for="contact-message" class="form-label-outside"><spring:message code="message"/></label>
-                                        <textarea id="contact-message" name="message" data-constraints="@Required" class="form-control"></textarea>
+                                        <form:textarea path="message"  data-constraints="@Required" class="form-control"></form:textarea>
                                     </div>
                                 </div>
                                 <div class="cell-xs-12 offset-top-30">
                                     <button type="submit" class="btn btn-primary"><spring:message code="send.message"/></button>
                                 </div>
                             </div>
-                        </form>
+                        </form:form>
                     </div>
                 </div>
             </div>
