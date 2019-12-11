@@ -24,7 +24,7 @@
                         <p><spring:message code="you.can.contact"/></p>
                         <p><spring:message code="we.would"/></p>
                         <div class="offset-top-50">
-                            <form data-form-output="form-output-global" data-form-type="contact" method="post" action="#" class="rd-mailform rd-mailform-mod-1">
+                            <form data-form-output="form-output-global" data-form-type="contact" method="post" action="under-construction" class="rd-mailform rd-mailform-mod-1">
                                 <div class="range">
                                     <div class="cell-sm-6">
                                         <div class="form-group">
@@ -69,11 +69,11 @@
                                 <h5><spring:message code="social"/></h5>
                                 <hr>
                                 <ul class="list-inline list-inline-xxs">
-                                    <li><a href="#" class="icon icon-xs icon-circle icon-white icon-filled-facebook fa-facebook"></a></li>
-                                    <li><a href="#" class="icon icon-xs icon-circle icon-white icon-filled-twitter fa-twitter"></a></li>
-                                    <li><a href="#" class="icon icon-xs icon-circle icon-white icon-filled-google fa-google"></a></li>
-                                    <li><a href="#" class="icon icon-xs icon-circle icon-white icon-filled-linkedin fa-linkedin"></a></li>
-                                    <li><a href="#" class="icon icon-xs icon-circle icon-white icon-filled-instagram fa-instagram"></a></li>
+                                    <li><a href="under-construction" class="icon icon-xs icon-circle icon-white icon-filled-facebook fa-facebook"></a></li>
+                                    <li><a href="under-construction" class="icon icon-xs icon-circle icon-white icon-filled-twitter fa-twitter"></a></li>
+                                    <li><a href="under-construction" class="icon icon-xs icon-circle icon-white icon-filled-google fa-google"></a></li>
+                                    <li><a href="under-construction" class="icon icon-xs icon-circle icon-white icon-filled-linkedin fa-linkedin"></a></li>
+                                    <li><a href="under-construction" class="icon icon-xs icon-circle icon-white icon-filled-instagram fa-instagram"></a></li>
                                 </ul>
                                 <div class="offset-top-30 offset-md-top-55">
                                     <h5><spring:message code="phone"/></h5>
@@ -96,7 +96,7 @@
                                     <address class="contact-info">
                                         <div class="unit unit-horizontal unit-spacing-xs">
                                             <div class="unit-left icon-adjust-vertical"><span class="icon icon-xs icon-primary mdi mdi-map-marker"></span></div>
-                                            <div class="unit-body"><a href="#" class="link-gray nowrap"><spring:message code="rosecrans.ave"/><br>
+                                            <div class="unit-body"><a href="under-construction" class="link-gray nowrap"><spring:message code="rosecrans.ave"/><br>
                                                 <spring:message code="ca.90245"/></a></div>
                                         </div>
                                     </address>

@@ -2,9 +2,9 @@ package com.example.repairagencyspringboot.service;
 
 import com.example.repairagencyspringboot.entity.User;
 import com.example.repairagencyspringboot.enums.Role;
-import com.example.repairagencyspringboot.form.ProfileForm;
-import com.example.repairagencyspringboot.form.RegistrationForm;
-import com.example.repairagencyspringboot.form.UserProfileForm;
+import com.example.repairagencyspringboot.dto.ProfileForm;
+import com.example.repairagencyspringboot.dto.RegistrationForm;
+import com.example.repairagencyspringboot.dto.UserProfileForm;
 import com.example.repairagencyspringboot.repository.UserRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

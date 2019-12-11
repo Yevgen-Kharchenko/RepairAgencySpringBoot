@@ -13,12 +13,12 @@
                                 src="images/logo-light-250x40.png" alt="" width="250" height="40"/></a></div>
                         <div class="offset-top-30 offset-sm-top-65">
                             <ul class="list-inline list-inline-xs">
-                                <li><a href="#" class="icon icon-xs icon-gray fa-facebook"></a></li>
-                                <li><a href="#" class="icon icon-xs icon-gray fa-twitter"></a></li>
-                                <li><a href="#" class="icon icon-xs icon-gray fa-pinterest-p"></a></li>
-                                <li><a href="#" class="icon icon-xs icon-gray fa-vimeo"></a></li>
-                                <li><a href="#" class="icon icon-xs icon-gray fa-google"></a></li>
-                                <li><a href="#" class="icon icon-xs icon-gray fa-rss"></a></li>
+                                <li><a href="under-construction" class="icon icon-xs icon-gray fa-facebook"></a></li>
+                                <li><a href="under-construction" class="icon icon-xs icon-gray fa-twitter"></a></li>
+                                <li><a href="under-construction" class="icon icon-xs icon-gray fa-pinterest-p"></a></li>
+                                <li><a href="under-construction" class="icon icon-xs icon-gray fa-vimeo"></a></li>
+                                <li><a href="under-construction" class="icon icon-xs icon-gray fa-google"></a></li>
+                                <li><a href="under-construction" class="icon icon-xs icon-gray fa-rss"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                                     <div class="unit unit-xs-horizontal unit-spacing-xs">
                                         <div class="unit-left icon-adjust-vertical"><span
                                                 class="icon icon-xs icon-white mdi mdi-map-marker"></span></div>
-                                        <div class="unit-body"><a href="#" class="nowrap"><spring:message code="rosecrans.ave"/><br><spring:message code="ca.90245"/></a></div>
+                                        <div class="unit-body"><a href="under-construction" class="nowrap"><spring:message code="rosecrans.ave"/><br><spring:message code="ca.90245"/></a></div>
                                     </div>
                                     <div class="unit unit-xs-horizontal unit-spacing-xs offset-top-22">
                                         <div class="unit-left icon-adjust-vertical"><span

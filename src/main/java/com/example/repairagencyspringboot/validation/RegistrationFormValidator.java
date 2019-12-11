@@ -1,6 +1,6 @@
 package com.example.repairagencyspringboot.validation;
 
-import com.example.repairagencyspringboot.form.RegistrationForm;
+import com.example.repairagencyspringboot.dto.RegistrationForm;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

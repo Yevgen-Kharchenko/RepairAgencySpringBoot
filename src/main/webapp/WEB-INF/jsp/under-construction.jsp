@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ page isErrorPage="true" %>
 
 
 <html lang="en" class="wide wow-animation">
@@ -15,7 +15,7 @@
   <header class="page-head">
     <section>
       <div class="shell text-center">
-        <div class="brand-wrap"><a href="" class="brand"><img src="static/images/logo-white-250x40.png" alt="" width="250" height="40"/></a></div>
+        <div class="brand-wrap"><a href="/" class="brand"><img src="images/logo-white-250x40.png" alt="" width="250" height="40"/></a></div>
       </div>
     </section>
   </header>
@@ -35,7 +35,7 @@
               </div>
             </div>
             <div class="offset-top-40 offset-md-top-75">
-              <div class="group-xl"><a href="" class="btn btn-primary-variant-1 btn-mod-1"><spring:message code="back.home"/></a>
+              <div class="group-xl"><a href="/" class="btn btn-primary-variant-1 btn-mod-1"><spring:message code="back.home"/></a>
                 <a href="contacts" class="btn btn-white-outline btn-mod-2"><spring:message code="contact.us"/></a></div>
             </div>
           </div>

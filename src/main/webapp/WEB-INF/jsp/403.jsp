@@ -24,9 +24,9 @@
             <div class="shell">
                 <div class="range range-sm-center">
                     <div class="cell-md-10 cell-lg-8">
-                        <h5 class="h5-variant-1"><spring:message code="not.found"/></h5>
+                        <h5 class="h5-variant-1"><spring:message code="forbidden"/></h5>
                         <div class="text-extra-big">403</div>
-                        <p class="text-style-2"><spring:message code="have.mistyped"/></p>
+                        <p class="text-style-2"><spring:message code="don`t.access"/></p>
                         <div class="offset-top-35 offset-sm-top-50">
                             <div class="group-xl"><a href="/" class="btn btn-primary-variant-1 btn-mod-1"><spring:message code="back.home"/></a>
                                 <a href="contacts" class="btn btn-white-outline btn-mod-2"><spring:message code="contact.us"/></a></div>

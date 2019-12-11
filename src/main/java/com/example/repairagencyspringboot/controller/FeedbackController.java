@@ -1,13 +1,11 @@
 package com.example.repairagencyspringboot.controller;
 
 import com.example.repairagencyspringboot.entity.Feedback;
-import com.example.repairagencyspringboot.entity.User;
-import com.example.repairagencyspringboot.form.FeedbackForm;
+import com.example.repairagencyspringboot.dto.FeedbackForm;
 import com.example.repairagencyspringboot.repository.FeedbackRepo;
 import com.example.repairagencyspringboot.service.FeedbackService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

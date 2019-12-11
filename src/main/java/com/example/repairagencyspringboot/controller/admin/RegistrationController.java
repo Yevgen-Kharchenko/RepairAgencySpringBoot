@@ -1,10 +1,9 @@
-package com.example.repairagencyspringboot.controller;
+package com.example.repairagencyspringboot.controller.admin;
 
 
 import com.example.repairagencyspringboot.entity.User;
 import com.example.repairagencyspringboot.enums.Role;
-import com.example.repairagencyspringboot.form.LoginForm;
-import com.example.repairagencyspringboot.form.RegistrationForm;
+import com.example.repairagencyspringboot.dto.RegistrationForm;
 import com.example.repairagencyspringboot.security.SecurityService;
 import com.example.repairagencyspringboot.service.UserService;
 import org.slf4j.Logger;

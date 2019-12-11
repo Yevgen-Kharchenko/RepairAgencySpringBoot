@@ -1,9 +1,9 @@
-package com.example.repairagencyspringboot.form;
+package com.example.repairagencyspringboot.dto;
 
 
         import javax.validation.constraints.NotNull;
 
-public class UserProfileForm {
+public class ProfileForm {
     @NotNull
     private String first_name;
     @NotNull
@@ -12,20 +12,8 @@ public class UserProfileForm {
     private String phone;
     @NotNull
     private String login;
-    @NotNull
-    private String role;
-    @NotNull
-    private String userId;
 
-    public UserProfileForm() {
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public ProfileForm() {
     }
 
     public String getPhone() {
@@ -60,11 +48,4 @@ public class UserProfileForm {
         this.login = login;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 }

@@ -1,4 +1,4 @@
-package com.example.repairagencyspringboot.form;
+package com.example.repairagencyspringboot.dto;
 
 import java.util.Objects;
 

@@ -1,7 +1,7 @@
 package com.example.repairagencyspringboot.controller;
 
 import com.example.repairagencyspringboot.entity.Orders;
-import com.example.repairagencyspringboot.form.OrderForm;
+import com.example.repairagencyspringboot.dto.OrderForm;
 import com.example.repairagencyspringboot.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

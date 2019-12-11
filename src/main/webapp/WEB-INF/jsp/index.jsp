@@ -322,8 +322,8 @@
                                     </div>
                                     <div class="post-footer">
                                         <ul class="list-tags-variant-1">
-                                            <li><a href="#"><spring:message code="repair"/></a></li>
-                                            <li><a href="#"><spring:message code="range2"/></a></li>
+                                            <li><a href="under-construction"><spring:message code="repair"/></a></li>
+                                            <li><a href="under-construction"><spring:message code="range2"/></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -345,8 +345,8 @@
                                     </div>
                                     <div class="post-footer">
                                         <ul class="list-tags-variant-1">
-                                            <li><a href="#"><spring:message code="repair"/></a></li>
-                                            <li><a href="#"><spring:message code="tools"/></a></li>
+                                            <li><a href="under-construction"><spring:message code="repair"/></a></li>
+                                            <li><a href="under-construction"><spring:message code="tools"/></a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -1,8 +1,7 @@
 package com.example.repairagencyspringboot.controller;
 
 import com.example.repairagencyspringboot.entity.User;
-import com.example.repairagencyspringboot.form.ProfileForm;
-import com.example.repairagencyspringboot.form.UserProfileForm;
+import com.example.repairagencyspringboot.dto.UserProfileForm;
 import com.example.repairagencyspringboot.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

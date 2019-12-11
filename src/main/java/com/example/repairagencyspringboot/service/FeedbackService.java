@@ -2,7 +2,7 @@ package com.example.repairagencyspringboot.service;
 
 import com.example.repairagencyspringboot.entity.Feedback;
 import com.example.repairagencyspringboot.entity.User;
-import com.example.repairagencyspringboot.form.FeedbackForm;
+import com.example.repairagencyspringboot.dto.FeedbackForm;
 import com.example.repairagencyspringboot.repository.FeedbackRepo;
 import com.example.repairagencyspringboot.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;

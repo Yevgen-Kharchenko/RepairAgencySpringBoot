@@ -36,8 +36,8 @@
                                             </div>
                                             <div class="post-footer">
                                                 <ul class="list-tags-variant-1">
-                                                    <li><a href="#"><spring:message code="repair"/></a></li>
-                                                    <li><a href="#"><spring:message code="range2"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="repair"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="range2"/></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -58,8 +58,8 @@
                                             </div>
                                             <div class="post-footer">
                                                 <ul class="list-tags-variant-1">
-                                                    <li><a href="#"><spring:message code="repair"/></a></li>
-                                                    <li><a href="#"><spring:message code="tools"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="repair"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="tools"/></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -80,8 +80,8 @@
                                             </div>
                                             <div class="post-footer">
                                                 <ul class="list-tags-variant-1">
-                                                    <li><a href="#"><spring:message code="repair"/></a></li>
-                                                    <li><a href="#"><spring:message code="tablet"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="repair"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="tablet"/></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -102,8 +102,8 @@
                                             </div>
                                             <div class="post-footer">
                                                 <ul class="list-tags-variant-1">
-                                                    <li><a href="#"><spring:message code="repair"/></a></li>
-                                                    <li><a href="#"><spring:message code="pipes"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="repair"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="pipes"/></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -112,12 +112,12 @@
                             </div>
                             <div class="cell-xs-12 offset-top-35 offset-sm-top-60">
                                 <ul class="pagination-custom">
-                                    <li class="disabled"><a href="#"><span class="sr-only"><spring:message code="prev"/></span></a></li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#"><span class="sr-only"><spring:message code="next"/></span></a></li>
+                                    <li class="disabled"><a href="under-construction"><span class="sr-only"><spring:message code="prev"/></span></a></li>
+                                    <li class="active"><a href="under-construction">1</a></li>
+                                    <li><a href="under-construction">2</a></li>
+                                    <li><a href="under-construction">3</a></li>
+                                    <li><a href="under-construction">4</a></li>
+                                    <li><a href="under-construction"><span class="sr-only"><spring:message code="next"/></span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -142,20 +142,20 @@
                                     <div class="row row-no-gutter offset-top-22">
                                         <div class="col-xs-6">
                                             <ul class="list-marked-variant-2 list-marked-gray">
-                                                <li><a href="#"><spring:message code="aug"/></a></li>
-                                                <li><a href="#"><spring:message code="oct"/></a></li>
-                                                <li><a href="#"><spring:message code="dec"/></a></li>
-                                                <li><a href="#"><spring:message code="feb"/></a></li>
-                                                <li><a href="#"><spring:message code="apr"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="aug"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="oct"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="dec"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="feb"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="apr"/></a></li>
                                             </ul>
                                         </div>
                                         <div class="col-xs-6 offset-top-0 shift-left-5">
                                             <ul class="list-marked-variant-2 list-marked-gray">
-                                                <li><a href="#"><spring:message code="sep"/></a></li>
-                                                <li><a href="#"><spring:message code="nov"/></a></li>
-                                                <li><a href="#"><spring:message code="jan"/></a></li>
-                                                <li><a href="#"><spring:message code="mar"/></a></li>
-                                                <li><a href="#"><spring:message code="may2"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="sep"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="nov"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="jan"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="mar"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="may2"/></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -199,11 +199,11 @@
                                     <h5><spring:message code="categories"/></h5>
                                     <hr>
                                     <ul class="list-marked-variant-2 list-marked-gray">
-                                        <li><a href="#"><spring:message code="ice.maker"/></a></li>
-                                        <li><a href="#"><spring:message code="stove.repair"/></a></li>
-                                        <li><a href="#"><spring:message code="appliance.parts"/></a></li>
-                                        <li><a href="#"><spring:message code="microwave.repair"/></a></li>
-                                        <li><a href="#"><spring:message code="washer.repair"/></a></li>
+                                        <li><a href="under-construction"><spring:message code="ice.maker"/></a></li>
+                                        <li><a href="under-construction"><spring:message code="stove.repair"/></a></li>
+                                        <li><a href="under-construction"><spring:message code="appliance.parts"/></a></li>
+                                        <li><a href="under-construction"><spring:message code="microwave.repair"/></a></li>
+                                        <li><a href="under-construction"><spring:message code="washer.repair"/></a></li>
                                     </ul>
                                 </div>
                             </div>

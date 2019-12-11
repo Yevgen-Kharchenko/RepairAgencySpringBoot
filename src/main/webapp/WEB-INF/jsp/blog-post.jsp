@@ -4,6 +4,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
+
 <html lang="en" class="wide wow-animation">
 <head>
     <title><spring:message code="blog"/></title>
@@ -44,18 +45,18 @@
                             </div>
                             <div class="post-footer">
                                 <ul class="list-tags-variant-1">
-                                    <li><a href="#"><spring:message code="repair"/></a></li>
-                                    <li><a href="#"><spring:message code="tools"/></a></li>
+                                    <li><a href="under-construction"><spring:message code="repair"/></a></li>
+                                    <li><a href="under-construction"><spring:message code="tools"/></a></li>
                                 </ul>
                                 <div class="block-wrap-1">
                                     <div class="group-xs group-middle">
                                         <p class="text-italic text-silver-chalice"><spring:message code="share"/></p>
                                         <ul class="list-inline list-inline-xxs">
-                                            <li><a href="#" class="icon icon-xs icon-circle icon-white icon-filled-facebook fa-facebook"></a></li>
-                                            <li><a href="#" class="icon icon-xs icon-circle icon-white icon-filled-twitter fa-twitter"></a></li>
-                                            <li><a href="#" class="icon icon-xs icon-circle icon-white icon-filled-google fa-google"></a></li>
-                                            <li><a href="#" class="icon icon-xs icon-circle icon-white icon-filled-linkedin fa-linkedin"></a></li>
-                                            <li><a href="#" class="icon icon-xs icon-circle icon-white icon-filled-instagram fa-instagram"></a></li>
+                                            <li><a href="under-construction" class="icon icon-xs icon-circle icon-white icon-filled-facebook fa-facebook"></a></li>
+                                            <li><a href="under-construction" class="icon icon-xs icon-circle icon-white icon-filled-twitter fa-twitter"></a></li>
+                                            <li><a href="under-construction" class="icon icon-xs icon-circle icon-white icon-filled-google fa-google"></a></li>
+                                            <li><a href="under-construction" class="icon icon-xs icon-circle icon-white icon-filled-linkedin fa-linkedin"></a></li>
+                                            <li><a href="under-construction" class="icon icon-xs icon-circle icon-white icon-filled-instagram fa-instagram"></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -70,7 +71,7 @@
                                         <figure><img src="images/blog-post-3-170x170.jpg" alt="" width="170" height="170"/> </figure>
                                     </div>
                                     <div class="unit-body">
-                                        <h6><a href="#"><spring:message code="benjamin.powell"/></a></h6>
+                                        <h6><a href="under-construction"><spring:message code="benjamin.powell"/></a></h6>
                                         <p class="caption"><spring:message code="blogger"/></p>
                                         <p> <spring:message code="professional.blogger"/></p>
                                     </div>
@@ -89,13 +90,13 @@
                                             </div>
                                             <div class="unit-body">
                                                 <div class="comment-header">
-                                                    <h6><a href="#"><spring:message code="stephanie.oliver"/></a></h6>
+                                                    <h6><a href="under-construction"><spring:message code="stephanie.oliver"/></a></h6>
                                                     <time datetime="2016-04-24"><spring:message code="april"/></time>
                                                 </div>
                                                 <div class="comment-text">
                                                     <p><spring:message code="thanks.to"/></p>
                                                 </div>
-                                                <div class="comment-footer"><a href="#" class="link link-icon link-primary"><span class="icon icon-xs fa-mail-reply"></span><span><spring:message code="reply"/></span></a></div>
+                                                <div class="comment-footer"><a href="under-construction" class="link link-icon link-primary"><span class="icon icon-xs fa-mail-reply"></span><span><spring:message code="reply"/></span></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -108,13 +109,13 @@
                                             </div>
                                             <div class="unit-body">
                                                 <div class="comment-header">
-                                                    <h6><a href="#"><spring:message code="benjamin.powell"/></a></h6>
+                                                    <h6><a href="under-construction"><spring:message code="benjamin.powell"/></a></h6>
                                                     <time datetime="2016-04-24"><spring:message code="april"/></time>
                                                 </div>
                                                 <div class="comment-text">
                                                     <p><spring:message code="thank.you!"/></p>
                                                 </div>
-                                                <div class="comment-footer"><a href="#" class="link link-icon link-primary"><span class="icon icon-xs fa-mail-reply"></span><span><spring:message code="reply"/></span></a></div>
+                                                <div class="comment-footer"><a href="under-construction" class="link link-icon link-primary"><span class="icon icon-xs fa-mail-reply"></span><span><spring:message code="reply"/></span></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -183,8 +184,8 @@
                                             </div>
                                             <div class="post-footer">
                                                 <ul class="list-tags-variant-1">
-                                                   <li><a href="#"><spring:message code="repair"/></a></li>
-                                                    <li><a href="#"><spring:message code="tablet"/></a></li>
+                                                   <li><a href="under-construction"><spring:message code="repair"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="tablet"/></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -205,8 +206,8 @@
                                             </div>
                                             <div class="post-footer">
                                                 <ul class="list-tags-variant-1">
-                                                    <li><a href="#"><spring:message code="repair"/></a></li>
-                                                    <li><a href="#"><spring:message code="pipes"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="repair"/></a></li>
+                                                    <li><a href="under-construction"><spring:message code="pipes"/></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -235,8 +236,8 @@
                                     <div class="row row-no-gutter offset-top-22">
                                         <div class="col-xs-6">
                                             <ul class="list-marked-variant-2 list-marked-gray">
-                                               <li><a href="#"><spring:message code="aug"/></a></li>
-                                                <li><a href="#"><spring:message code="oct"/></a></li>
+                                               <li><a href="under-construction"><spring:message code="aug"/></a></li>
+                                                <li><a href="under-construction"><spring:message code="oct"/></a></li>
                                                 <li><a href="#"><spring:message code="dec"/></a></li>
                                                 <li><a href="#"><spring:message code="feb"/></a></li>
                                                 <li><a href="#"><spring:message code="apr"/></a></li>
@@ -305,7 +306,7 @@
                                     <ul class="list-tags-variant-2">
                                         <li><a href="#"><spring:message code="repair"/></a></li>
                                         <li><a href="#"><spring:message code="home.appliance"/></a></li>
-                                        <li><a href="#"><spring:message code="washer.ice"/></a></li>
+                                        <li><a href="#"><spring:message code="washer.repair"/></a></li>
                                         <li><a href="#"><spring:message code="microwave"/></a></li>
                                         <li><a href="#"><spring:message code="stove.repair"/></a></li>
                                     </ul>

@@ -1,10 +1,7 @@
 package com.example.repairagencyspringboot.controller;
 
-import com.example.repairagencyspringboot.entity.Comments;
-import com.example.repairagencyspringboot.form.CommentForm;
-import com.example.repairagencyspringboot.form.StatusForm;
+import com.example.repairagencyspringboot.dto.StatusForm;
 import com.example.repairagencyspringboot.service.OrderService;
-import com.example.repairagencyspringboot.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
