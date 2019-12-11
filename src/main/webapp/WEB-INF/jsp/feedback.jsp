@@ -15,6 +15,11 @@
 <div class="page">
     <c:import url="header-part.jsp"/>
     <main class="page-content">
+        <div class="range range-sm-center"><h5>
+            <c:if test="${not empty notification}">
+                <c:out value ="${notification}" />
+            </c:if>
+        </h5></div>
 
         <section class="section-top-60 section-sm-top-90">
             <div class="shell">

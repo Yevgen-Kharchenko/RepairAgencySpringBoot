@@ -14,7 +14,7 @@
 <div class="page">
     <c:import url="header-part.jsp"/>
     <main class="page-content">
-
+        <h1>Hello world!</h1>
     </main>
     <c:import url="footer-part.jsp"/>
 </div>

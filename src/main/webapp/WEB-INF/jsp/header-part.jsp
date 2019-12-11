@@ -121,8 +121,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="orders">
-                            <spring:message code="orders"/>
+                        <a href="order">
+                            <spring:message code="order"/>
                         </a>
                     </li>
 

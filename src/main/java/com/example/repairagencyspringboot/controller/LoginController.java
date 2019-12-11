@@ -26,7 +26,6 @@ public class LoginController {
     public String login(Model model) {
         model.addAttribute("command", new LoginForm());
 
-
         return "login";
     }
 

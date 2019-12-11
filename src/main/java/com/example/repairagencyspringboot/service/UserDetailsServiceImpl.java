@@ -11,13 +11,16 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpSession;
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-    @Autowired
     private final UserRepo userRepo;
+    private final HttpSession session;
 
-    public UserDetailsServiceImpl(UserRepo userRepo) {
+    public UserDetailsServiceImpl(UserRepo userRepo, HttpSession session) {
         this.userRepo = userRepo;
+        this.session = session;
     }
 
     @Override
@@ -26,8 +29,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         User user = userRepo.findByLogin(login);
         if (user == null) {
             throw new UsernameNotFoundException("User not found! Username : " + login);
-
         }
+        session.setAttribute("user", user);
         return new UserDetailsImpl(user);
     }
 }

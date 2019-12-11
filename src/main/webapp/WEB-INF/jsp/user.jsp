@@ -19,7 +19,7 @@
       <div class="shell">
         <div class="range">
           <div class="cell-md-10 cell-lg-8">
-            <h5><spring:message code="hello"/> ${user.username}!</h5>
+            <h5><spring:message code="hello"/> ${user.firstName} ${user.lastName}!</h5>
 			<h6><spring:message code="you.can.user"/><a href="profile" class="search_link"><spring:message code="profile"/></a></h6>
             <hr>
             <div class="offset-top-32">
@@ -27,7 +27,7 @@
                 <table class="table table-primary table-striped-variant-1">
                     <thead>
                     <tr>
-                        <th><spring:message code="orders.id"/></th>
+                        <th><spring:message code="order.id"/></th>
 						<th><spring:message code="date"/></th>
 						<th><spring:message code="repair.type"/></th>
                         <th><spring:message code="price"/></th>
@@ -36,50 +36,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>2019-09-15</td>
-                        <td>REFRIGERATOR</td>
-						<td>NEW</td>
-                        <td>500,00</td>
-                        <td>
-                            <a href="orders-comment" class="search_link"><span
-                                    class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>2019-09-15</td>
-                        <td>REFRIGERATOR</td>
-						<td>OFFER</td>
-                        <td>500,00</td>
-                        <td>
-                            <a href="orders-comment" class="search_link"><span
-                                    class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>2019-09-15</td>
-                        <td>REFRIGERATOR</td>
-						<td>IN_PROGRESS</td>
-                        <td>500,00</td>
-                        <td>
-                            <a href="orders-comment" class="search_link"><span
-                                    class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>2019-09-15</td>
-                        <td>REFRIGERATOR</td>
-						<td>CLOSED</td>
-                        <td>500,00</td>
-                        <td>
-                            <a href="orders-comment" class="search_link"><span
-                                    class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
-                        </td>
-                    </tr>
+                    <c:forEach items="${orders}" var="orders">
+                        <tr>
+                            <td>${orders.id}</td>
+                            <td>${orders.date}</td>
+                            <td>${orders.repairsTypes}</td>
+                            <td>${orders.price}</td>
+                            <td>${orders.status}</td>
+                            <td>
+                                <a href="order-comment?orderId=${orders.id}" class="search_link"><span
+                                        class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
               </div>

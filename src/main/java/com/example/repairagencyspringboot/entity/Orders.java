@@ -47,6 +47,13 @@ public class Orders extends BaseEntity {
         this.status = status;
     }
 
+    public Orders(LocalDate date, RepairsTypes repairsTypes, User user, Status status) {
+        this.date = date;
+        this.repairsTypes = repairsTypes;
+        this.user = user;
+        this.status = status;
+    }
+
     public LocalDate getDate() {
         return date;
     }

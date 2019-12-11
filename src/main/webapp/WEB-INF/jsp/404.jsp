@@ -16,7 +16,7 @@
     <header class="page-head">
         <section>
             <div class="shell text-center">
-                <div class="brand-wrap"><a href="" class="brand"><img src="spring:message codeimages/logo-white-250x40.png" alt="" width="250" height="40"/></a></div>
+                <div class="brand-wrap"><a href="/" class="brand"><img src="images/logo-white-250x40.png" alt="" width="250" height="40"/></a></div>
             </div>
         </section>
     </header>
@@ -29,7 +29,7 @@
                         <div class="text-extra-big">404</div>
                         <p class="text-style-2"><spring:message code="have.mistyped"/></p>
                         <div class="offset-top-35 offset-sm-top-50">
-                            <div class="group-xl"><a href="" class="btn btn-primary-variant-1 btn-mod-1"><spring:message code="back.home"/></a>
+                            <div class="group-xl"><a href="/" class="btn btn-primary-variant-1 btn-mod-1"><spring:message code="back.home"/></a>
                                 <a href="contacts" class="btn btn-white-outline btn-mod-2"><spring:message code="contact.us"/></a></div>
                         </div>
                     </div>

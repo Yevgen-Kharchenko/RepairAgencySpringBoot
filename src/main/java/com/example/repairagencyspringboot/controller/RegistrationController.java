@@ -39,6 +39,7 @@ public class RegistrationController {
     @GetMapping
     public String getRegistrationPage(Model model){
         LOG.info("Get Registration Page");
+
         model.addAttribute("registrationForm", new RegistrationForm());
         return "registration";
     }

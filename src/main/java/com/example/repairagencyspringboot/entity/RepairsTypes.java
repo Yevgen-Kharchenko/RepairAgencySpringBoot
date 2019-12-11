@@ -48,8 +48,6 @@ public class RepairsTypes extends BaseEntity {
 
     @Override
     public String toString() {
-        return "RepairsTypes{" +
-                "title='" + title + '\'' +
-                '}';
+        return  title ;
     }
 }
