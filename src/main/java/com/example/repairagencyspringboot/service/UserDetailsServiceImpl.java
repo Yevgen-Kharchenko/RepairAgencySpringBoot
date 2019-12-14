@@ -2,7 +2,7 @@ package com.example.repairagencyspringboot.service;
 
 import com.example.repairagencyspringboot.model.User;
 import com.example.repairagencyspringboot.repository.UserRepo;
-import com.example.repairagencyspringboot.service.security.UserDetailsImpl;
+import com.example.repairagencyspringboot.service.security.CustomUserDetails;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -36,6 +36,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException("User not found! Username : " + login);
         }
         session.setAttribute("user", user);
-        return new UserDetailsImpl(user);
+        return new CustomUserDetails(user);
     }
 }

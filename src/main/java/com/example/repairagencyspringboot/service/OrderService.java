@@ -1,17 +1,14 @@
 package com.example.repairagencyspringboot.service;
 
-import com.example.repairagencyspringboot.controller.dto.CommentForm;
 import com.example.repairagencyspringboot.controller.dto.OrderForm;
 import com.example.repairagencyspringboot.controller.dto.StatusForm;
-import com.example.repairagencyspringboot.model.Comments;
-import com.example.repairagencyspringboot.model.Orders;
-import com.example.repairagencyspringboot.model.RepairsTypes;
+import com.example.repairagencyspringboot.model.Order;
+import com.example.repairagencyspringboot.model.RepairType;
 import com.example.repairagencyspringboot.model.User;
 import com.example.repairagencyspringboot.model.enums.Status;
 import com.example.repairagencyspringboot.repository.CommentsRepo;
 import com.example.repairagencyspringboot.repository.OrderRepo;
-import com.example.repairagencyspringboot.repository.RepairsTypesRepo;
-import com.example.repairagencyspringboot.repository.UserRepo;
+import com.example.repairagencyspringboot.repository.RepairTypeRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +25,11 @@ public class OrderService {
     @Autowired
     private OrderRepo orderRepo;
     @Autowired
-    private UserRepo userRepo;
-    @Autowired
     private UserService userService;
     @Autowired
     private CommentsRepo commentsRepo;
     @Autowired
-    private RepairsTypesRepo repairsTypesRepo;
+    private RepairTypeRepo repairTypeRepo;
 
     /**
      * Converts data from OrderForm to Order and stores it into DB
@@ -43,33 +38,16 @@ public class OrderService {
      * @return
      */
     @Transactional
-    public Orders addOrder(OrderForm form) {
-        if (smallMessage(form.getMessage()) || (form.getRepairTypeName().equals("NONE"))) {
-            return null;
-        }
+    public Order addOrder(OrderForm form) {
         LOG.info("RepairTypeName: " + form.getRepairTypeName());
         LOG.info("in addOrder method");
         User user = userService.getCurrentUser();
         LOG.info("Current user: " + user);
-        RepairsTypes repairsTypes = repairsTypesRepo.findByTitle(form.getRepairTypeName());
-        LOG.info("RepairType: " + repairsTypes);
-        Orders order = orderRepo.save(new Orders(LocalDate.now(), repairsTypes, user, Status.NEW));
+        RepairType repairType = repairTypeRepo.findByTitle(form.getRepairTypeName());
+        LOG.info("RepairType: " + repairType);
+        Order order = orderRepo.save(new Order(LocalDate.now(), repairType, user, Status.NEW));
         LOG.info("Save order: " + order);
-        Comments comments = new Comments(LocalDate.now(), form.getMessage(), user, order);
-        commentsRepo.save(comments);
-        LOG.info("Save comments: " + comments);
-        LOG.info("Return order: " + order);
         return order;
-    }
-
-    /**
-     * Verifies the length of the message from OrderForm and returns True/False
-     *
-     * @param message
-     * @return
-     */
-    private boolean smallMessage(String message) {
-        return message.length() < 10;
     }
 
     /**
@@ -77,8 +55,8 @@ public class OrderService {
      *
      * @return
      */
-    public List<RepairsTypes> getRepairTypesNames() {
-        List<RepairsTypes> repairTypesNames = repairsTypesRepo.findAll();
+    public List<RepairType> getRepairTypesNames() {
+        List<RepairType> repairTypesNames = repairTypeRepo.findAll();
         return repairTypesNames;
     }
 
@@ -88,10 +66,10 @@ public class OrderService {
      * @param id
      * @return
      */
-    public Orders getOrderById(Long id) {
+    public Order getOrderById(Long id) {
 
-        Orders order = null;
-        Optional<Orders> o = orderRepo.findById(id);
+        Order order = null;
+        Optional<Order> o = orderRepo.findById(id);
         if (o.isPresent()) {
             order = o.get();
         } else {
@@ -101,47 +79,6 @@ public class OrderService {
         return order;
     }
 
-    /**
-     * Gets list of Comments from DB by Order ID
-     *
-     * @param id
-     * @return
-     */
-    public List<Comments> getCommentsByOrderId(Long id) {
-        List<Comments> comments = commentsRepo.findAllByOrders(getOrderById(id));
-        comments.remove(0);
-        return comments;
-    }
-
-    /**
-     * Gets the first Comment from the List of Comments by Order ID
-     *
-     * @param id
-     * @return
-     */
-    public Comments getFirstCommentByOrderId(Long id) {
-        List<Comments> comments = commentsRepo.findAllByOrders(getOrderById(id));
-        Comments comment = comments.get(0);
-        return comment;
-    }
-
-    /**
-     * Converts data from CommentForm to Comment and stores it into DB
-     *
-     * @param form
-     * @return
-     */
-    public Comments addNewComment(CommentForm form) {
-        if (smallMessage(form.getMessage())) {
-            return null;
-        }
-        User user = userService.getCurrentUser();
-        Comments comment = new Comments(LocalDate.now(),
-                form.getMessage(), user,
-                getOrderById(Long.parseLong(form.getOrderId())));
-
-        return commentsRepo.save(comment);
-    }
 
     /**
      * Changes the Status of the Order depending on the StatusForm
@@ -150,7 +87,7 @@ public class OrderService {
      * @return
      */
     public boolean changeStatus(StatusForm form) {
-        Orders order = getOrderById(Long.parseLong(form.getOrderId()));
+        Order order = getOrderById(Long.parseLong(form.getOrderId()));
         if (form.getPrice() != null) {
             order.setPrice(Double.parseDouble(form.getPrice()));
         }

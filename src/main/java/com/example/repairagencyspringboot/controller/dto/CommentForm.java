@@ -12,6 +12,11 @@ public class CommentForm {
     public CommentForm() {
     }
 
+    public CommentForm(@NotNull String message, @NotNull String orderId) {
+        this.message = message;
+        this.orderId = orderId;
+    }
+
     public String getMessage() {
         return message;
     }

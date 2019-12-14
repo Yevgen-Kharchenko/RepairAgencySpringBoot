@@ -6,20 +6,20 @@ import javax.persistence.Table;
 import java.util.Objects;
 
 @Entity
-@Table(name = "repairs_types")
-public class RepairsTypes extends BaseEntity {
+@Table(name = "repair_types")
+public class RepairType extends BaseEntity {
 
     @Column(name = "title")
     private String title;
 
-    public RepairsTypes() {
+    public RepairType() {
     }
 
-    public RepairsTypes(String title) {
+    public RepairType(String title) {
         this.title = title;
     }
 
-    public RepairsTypes(Long id, String title) {
+    public RepairType(Long id, String title) {
         super(id);
         this.title = title;
     }
@@ -35,9 +35,9 @@ public class RepairsTypes extends BaseEntity {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof RepairsTypes)) return false;
+        if (!(o instanceof RepairType)) return false;
         if (!super.equals(o)) return false;
-        RepairsTypes that = (RepairsTypes) o;
+        RepairType that = (RepairType) o;
         return Objects.equals(getTitle(), that.getTitle());
     }
 

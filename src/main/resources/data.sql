@@ -12,17 +12,17 @@ insert into `feedback` (`date`, `feedback`, `user_id`) values
 ('2019-08-30','Дуже задоволений сервiсом та якiстю! Буду рекомендувати знайомим та звертатися повторно!',5),
 ('2019-09-05','Ремонтували комп. Думав, що йому гаплик (досi вiдчуваю запах диму). Та майстри зробили неможливе та ще й не дорого. Супер майстерня! Рекомендую!',6);
 
-insert into repairs_types (`title`) values
+insert into repair_types (`title`) values
 ('MOBILE_PHONE'), ('TV'), ('COMPUTER'), ('VACUUM_CLEANER'),
 ('TABLET'), ('REFRIGERATOR'), ('MICROWAVE'), ('MONITOR'),
 ('OTHER'), ('STOVE'), ('WASHER'), ('RANGE_HOOD'), ('ICE_MAKER');
 
-insert into `orders` (`date`, `price`, `repairs_types_id`, `user_id`, `status`) values
+insert into `orders` (`date`, `price`, `repair_type_id`, `user_id`, `status`) values
 ('2019-08-20',100.0,1,4,'CLOSED'), ('2019-08-23',150.0,2,5,'COMPLETED'), ('2019-08-25',200.0,3,6,'IN_PROGRESS'),
 ('2019-09-02',250.0,4,7,'CANCELED'), ('2019-09-12',300.0,5,4,'IN_PROGRESS'), ('2019-09-22',350.0,6,5,'OFFER'),
 ('2019-09-30',400.0,7,6,'CLOSED'), ('2019-10-02',0,8,7,'NEW'), ('2019-10-02',0,9,4,'NEW');
 
-insert into `comments` (`date`, `comment`, `user_id`, `orders_id`) values
+insert into `comments` (`date`, `comment`, `user_id`, `order_id`) values
         ('2019-08-20','Добрий день! У мене розбилось скло мобільного телефону Samsung S-100. Скажіть, будь ласка, скільки буде коштувати заміна?',4,1),
 		('2019-08-20','Вітаємо в нашій Ремонтній Майстерні! Заміна скла Вашого телефону буде коштувати 100 монет.',2,1),
 		('2019-08-23','Привіт! Не працює дистанційний пульт до телевізора Філіпс.',5,2),

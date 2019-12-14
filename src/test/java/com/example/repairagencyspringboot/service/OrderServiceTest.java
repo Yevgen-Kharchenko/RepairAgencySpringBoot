@@ -1,16 +1,13 @@
 package com.example.repairagencyspringboot.service;
 
 import com.example.repairagencyspringboot.controller.dto.OrderForm;
-import com.example.repairagencyspringboot.model.Comments;
-import com.example.repairagencyspringboot.model.Orders;
-import com.example.repairagencyspringboot.model.RepairsTypes;
+import com.example.repairagencyspringboot.model.Order;
+import com.example.repairagencyspringboot.model.RepairType;
 import com.example.repairagencyspringboot.model.User;
 import com.example.repairagencyspringboot.model.enums.Role;
 import com.example.repairagencyspringboot.model.enums.Status;
-import com.example.repairagencyspringboot.repository.CommentsRepo;
 import com.example.repairagencyspringboot.repository.OrderRepo;
-import com.example.repairagencyspringboot.repository.RepairsTypesRepo;
-import com.example.repairagencyspringboot.repository.UserRepo;
+import com.example.repairagencyspringboot.repository.RepairTypeRepo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -28,19 +25,16 @@ import static org.mockito.Mockito.when;
 public class OrderServiceTest {
 
     @InjectMocks
+    private OrderService orderService;
+
+    @Mock
     private UserService userService;
 
     @Mock
     private OrderRepo orderRepo;
 
     @Mock
-    private UserRepo userRepo;
-
-    @Mock
-    private CommentsRepo commentsRepo;
-
-    @Mock
-    private RepairsTypesRepo repairsTypesRepo;
+    private RepairTypeRepo repairTypeRepo;
 
     @Test
     public void addOrder() {
@@ -51,48 +45,16 @@ public class OrderServiceTest {
         User user = new User("login", "pass", Role.CUSTOMER);
         when(userService.getCurrentUser()).thenReturn(user);
 
-        RepairsTypes repairsTypes = new RepairsTypes("TABLET");
-        when(repairsTypesRepo.findByTitle(orderForm.getRepairTypeName())).thenReturn(repairsTypes);
+        RepairType repairType = new RepairType("TABLET");
+        when(repairTypeRepo.findByTitle(orderForm.getRepairTypeName())).thenReturn(repairType);
 
-        Orders order = new Orders(LocalDate.now(), repairsTypes, user, Status.NEW);
+        Order order = new Order(LocalDate.now(), repairType, user, Status.NEW);
         when(orderRepo.save(any())).thenReturn(order);
+        Order newOrder = orderService.addOrder(orderForm);
 
-        Comments comments = new Comments(LocalDate.now(), orderForm.getMessage(), user, order);
-        when(commentsRepo.save(any())).thenReturn(comments);
-
-        assertNotNull(order);
-        assertEquals(order.getRepairsTypes(), orderForm.getRepairTypeName());
-        assertEquals(order.getUser(), user);
-        assertEquals(order.getStatus(), Status.NEW);
-
-        assertNotNull(comments);
-        assertEquals(comments.getComment(), orderForm.getMessage());
-        assertEquals(comments.getUser(), user);
-        assertEquals(comments.getOrders(), order);
-
-    }
-
-    @Test
-    public void getRepairTypesNames() {
-    }
-
-    @Test
-    public void getOrderById() {
-    }
-
-    @Test
-    public void getCommentsByOrderId() {
-    }
-
-    @Test
-    public void getFirstCommentByOrderId() {
-    }
-
-    @Test
-    public void addNewComment() {
-    }
-
-    @Test
-    public void changeStatus() {
+        assertNotNull(newOrder);
+        assertEquals(newOrder.getRepairType().toString(), orderForm.getRepairTypeName());
+        assertEquals(newOrder.getUser(), user);
+        assertEquals(newOrder.getStatus(), Status.NEW);
     }
 }

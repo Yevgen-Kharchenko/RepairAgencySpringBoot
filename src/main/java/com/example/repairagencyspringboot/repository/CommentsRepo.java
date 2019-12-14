@@ -1,12 +1,12 @@
 package com.example.repairagencyspringboot.repository;
 
-import com.example.repairagencyspringboot.model.Comments;
-import com.example.repairagencyspringboot.model.Orders;
+import com.example.repairagencyspringboot.model.Comment;
+import com.example.repairagencyspringboot.model.Order;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface CommentsRepo extends CrudRepository<Comments, Long> {
+public interface CommentsRepo extends CrudRepository<Comment, Long> {
 
-    List<Comments> findAllByOrders(Orders orders);
+    List<Comment> findAllByOrder(Order order);
 }

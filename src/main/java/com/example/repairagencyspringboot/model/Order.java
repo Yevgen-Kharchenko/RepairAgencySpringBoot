@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "orders")
-public class Orders extends BaseEntity {
+public class Order extends BaseEntity {
 
     @Column(name = "date", columnDefinition = "DATE")
     private LocalDate date;
@@ -17,8 +17,8 @@ public class Orders extends BaseEntity {
     private double price;
 
     @ManyToOne
-    @JoinColumn(name = "repairs_types_id", referencedColumnName = "id")
-    private RepairsTypes repairsTypes;
+    @JoinColumn(name = "repair_type_id", referencedColumnName = "id")
+    private RepairType repairType;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
@@ -27,29 +27,29 @@ public class Orders extends BaseEntity {
     @Enumerated(value = EnumType.STRING)
     private Status status;
 
-    public Orders() {
+    public Order() {
     }
 
-    public Orders(LocalDate date, double price, RepairsTypes repairsTypes, User user, Status status) {
+    public Order(LocalDate date, double price, RepairType repairType, User user, Status status) {
         this.date = date;
         this.price = price;
-        this.repairsTypes = repairsTypes;
+        this.repairType = repairType;
         this.user = user;
         this.status = status;
     }
 
-    public Orders(Long id, LocalDate date, double price, RepairsTypes repairsTypes, User user, Status status) {
+    public Order(Long id, LocalDate date, double price, RepairType repairType, User user, Status status) {
         super(id);
         this.date = date;
         this.price = price;
-        this.repairsTypes = repairsTypes;
+        this.repairType = repairType;
         this.user = user;
         this.status = status;
     }
 
-    public Orders(LocalDate date, RepairsTypes repairsTypes, User user, Status status) {
+    public Order(LocalDate date, RepairType repairType, User user, Status status) {
         this.date = date;
-        this.repairsTypes = repairsTypes;
+        this.repairType = repairType;
         this.user = user;
         this.status = status;
     }
@@ -70,12 +70,12 @@ public class Orders extends BaseEntity {
         this.price = price;
     }
 
-    public RepairsTypes getRepairsTypes() {
-        return repairsTypes;
+    public RepairType getRepairType() {
+        return repairType;
     }
 
-    public void setRepairsTypes(RepairsTypes repairsTypes) {
-        this.repairsTypes = repairsTypes;
+    public void setRepairType(RepairType repairType) {
+        this.repairType = repairType;
     }
 
     public User getUser() {
@@ -97,19 +97,19 @@ public class Orders extends BaseEntity {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Orders)) return false;
+        if (!(o instanceof Order)) return false;
         if (!super.equals(o)) return false;
-        Orders orders = (Orders) o;
-        return Double.compare(orders.getPrice(), getPrice()) == 0 &&
-                Objects.equals(getDate(), orders.getDate()) &&
-                Objects.equals(getRepairsTypes(), orders.getRepairsTypes()) &&
-                Objects.equals(getUser(), orders.getUser()) &&
-                getStatus() == orders.getStatus();
+        Order order = (Order) o;
+        return Double.compare(order.getPrice(), getPrice()) == 0 &&
+                Objects.equals(getDate(), order.getDate()) &&
+                Objects.equals(getRepairType(), order.getRepairType()) &&
+                Objects.equals(getUser(), order.getUser()) &&
+                getStatus() == order.getStatus();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getDate(), getPrice(), getRepairsTypes(), getUser(), getStatus());
+        return Objects.hash(super.hashCode(), getDate(), getPrice(), getRepairType(), getUser(), getStatus());
     }
 
     @Override
@@ -117,7 +117,7 @@ public class Orders extends BaseEntity {
         return "Order{" +
                 "date=" + date +
                 ", price=" + price +
-                ", repairsTypes=" + repairsTypes +
+                ", repairsTypes=" + repairType +
                 ", user=" + user +
                 ", status=" + status +
                 '}';

@@ -79,7 +79,7 @@
                             </article>
                         </div>
                         <div class="offset-top-60 offset-md-top-88">
-                            <h5><spring:message code="comments"/></h5>
+                            <h5><spring:message code="comment"/></h5>
                             <hr>
                             <div class="comment-group">
                                 <article class="comment">

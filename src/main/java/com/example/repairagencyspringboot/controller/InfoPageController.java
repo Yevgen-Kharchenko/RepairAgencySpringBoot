@@ -1,15 +1,14 @@
 package com.example.repairagencyspringboot.controller;
 
 import com.example.repairagencyspringboot.repository.FeedbackRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.annotation.Resource;
-
 @Controller
 public class InfoPageController {
-    @Resource
+    @Autowired
     private FeedbackRepo repository;
 
     @GetMapping(value = "about")

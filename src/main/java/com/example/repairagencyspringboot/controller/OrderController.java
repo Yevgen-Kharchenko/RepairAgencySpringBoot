@@ -1,10 +1,13 @@
 package com.example.repairagencyspringboot.controller;
 
+import com.example.repairagencyspringboot.controller.dto.CommentForm;
 import com.example.repairagencyspringboot.controller.dto.OrderForm;
-import com.example.repairagencyspringboot.model.Orders;
+import com.example.repairagencyspringboot.model.Order;
+import com.example.repairagencyspringboot.service.CommentsService;
 import com.example.repairagencyspringboot.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,15 +16,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.annotation.Resource;
 import javax.validation.Valid;
 
 @Controller
 @RequestMapping(value = "/order")
 public class OrderController {
     private static final Logger LOG = LoggerFactory.getLogger(OrderController.class);
-    @Resource
+    @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private CommentsService commentsService;
+
 
     @GetMapping
     public String order(Model model) {
@@ -40,7 +46,9 @@ public class OrderController {
         if (error.hasErrors()) {
             return "order";
         }
-        Orders order = orderService.addOrder(orderForm);
+        Order order = orderService.addOrder(orderForm);
+        CommentForm commentForm = new CommentForm(orderForm.getMessage(), order.getId().toString());
+        commentsService.addNewComment(commentForm);
         LOG.info("Order controller: save order");
 
         if (order == null) {

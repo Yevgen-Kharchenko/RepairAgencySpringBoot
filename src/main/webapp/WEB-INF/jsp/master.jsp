@@ -37,7 +37,7 @@
                         <tr>
                             <td>${ordersByMaster.id}</td>
                             <td>${ordersByMaster.date}</td>
-                            <td>${ordersByMaster.repairsTypes}</td>
+                            <td>${ordersByMaster.repairType}</td>
                             <td>
                                 <a href="order-comment?orderId=${ordersByMaster.id}" class="search_link"><span
                                         class="icon icon-sm-variant-2 icon-primary fa-pencil-square-o"></span></a>

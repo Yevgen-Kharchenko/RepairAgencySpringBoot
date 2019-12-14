@@ -3,11 +3,13 @@ package com.example.repairagencyspringboot.service;
 import com.example.repairagencyspringboot.controller.dto.ProfileForm;
 import com.example.repairagencyspringboot.controller.dto.RegistrationForm;
 import com.example.repairagencyspringboot.controller.dto.UserProfileForm;
+import com.example.repairagencyspringboot.exception.UserExistException;
 import com.example.repairagencyspringboot.model.User;
 import com.example.repairagencyspringboot.model.enums.Role;
 import com.example.repairagencyspringboot.repository.UserRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.acls.model.NotFoundException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,7 +17,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -24,9 +25,9 @@ import java.util.stream.Stream;
 @Service
 public class UserService {
     private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
-    @Resource
+    @Autowired
     private UserRepo userRepo;
-    @Resource
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     /**
@@ -51,14 +52,14 @@ public class UserService {
      */
     public User registerUser(RegistrationForm form, Role role) {
         LOG.info("Register user");
-        if (loginExist(form.getLogin())) {
-            return null;
+        if (userRepo.existsByLogin(form.getLogin())) {
+            throw new UserExistException(String.format("User with login %s already exists", form.getLogin()));
         }
 
         String password = passwordEncoder.encode(form.getPassword());
 
         User user = new User(form.getLogin(), password, form.getFirst_name(), form.getLast_name(), form.getPhone(), role);
-        LOG.info("New user: " + user);
+        LOG.info("Save new user: " + user);
         return userRepo.save(user);
     }
 
@@ -84,22 +85,11 @@ public class UserService {
             username = obj.toString();
         }
 
-        User u = userRepo.findByLogin(username);
-        return u;
+        return userRepo.findByLogin(username);
     }
 
     /**
-     * Checks if the Login exists in User Repository
-     *
-     * @param login
-     * @return
-     */
-    private boolean loginExist(String login) {
-        return userRepo.findByLogin(login) != null;
-    }
-
-    /**
-     * Converts data from ProfileForm to User and updates it in DB
+     * Takes data from ProfileForm to User and updates it in DB
      *
      * @param profileForm
      * @return
@@ -135,7 +125,8 @@ public class UserService {
     }
 
     /**
-     * Converts data from UserProfileForm to User and updates it in DB
+     * Uses by admin role to update other users profile
+     * Takes data from UserProfileForm to User and updates it in DB
      *
      * @param form
      * @return

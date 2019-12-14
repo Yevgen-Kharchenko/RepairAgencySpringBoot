@@ -60,7 +60,7 @@
                                                                     <tr>
                                                                         <td>${ordersNew.id}</td>
                                                                         <td>${ordersNew.date}</td>
-                                                                        <td>${ordersNew.repairsTypes}</td>
+                                                                        <td>${ordersNew.repairType}</td>
                                                                         <td>${ordersNew.user.firstName}</td>
                                                                         <td>${ordersNew.user.lastName}</td>
                                                                         <td>${ordersNew.user.login}</td>
@@ -106,7 +106,7 @@
                                                                     <tr>
                                                                         <td>${ordersOffer.id}</td>
                                                                         <td>${ordersOffer.date}</td>
-                                                                        <td>${ordersOffer.repairsTypes}</td>
+                                                                        <td>${ordersOffer.repairType}</td>
                                                                         <td>${ordersOffer.user.firstName}</td>
                                                                         <td>${ordersOffer.user.lastName}</td>
                                                                         <td>${ordersOffer.user.login}</td>
@@ -153,7 +153,7 @@
                                                                     <tr>
                                                                         <td>${ordersInProgress.id}</td>
                                                                         <td>${ordersInProgress.date}</td>
-                                                                        <td>${ordersInProgress.repairsTypes}</td>
+                                                                        <td>${ordersInProgress.repairType}</td>
                                                                         <td>${ordersInProgress.user.firstName}</td>
                                                                         <td>${ordersInProgress.user.lastName}</td>
                                                                         <td>${ordersInProgress.user.login}</td>
@@ -200,7 +200,7 @@
                                                                     <tr>
                                                                         <td>${ordersCompleted.id}</td>
                                                                         <td>${ordersCompleted.date}</td>
-                                                                        <td>${ordersCompleted.repairsTypes}</td>
+                                                                        <td>${ordersCompleted.repairType}</td>
                                                                         <td>${ordersCompleted.user.firstName}</td>
                                                                         <td>${ordersCompleted.user.lastName}</td>
                                                                         <td>${ordersCompleted.user.login}</td>
@@ -247,7 +247,7 @@
                                                                     <tr>
                                                                         <td>${ordersCanceled.id}</td>
                                                                         <td>${ordersCanceled.date}</td>
-                                                                        <td>${ordersCanceled.repairsTypes}</td>
+                                                                        <td>${ordersCanceled.repairType}</td>
                                                                         <td>${ordersCanceled.user.firstName}</td>
                                                                         <td>${ordersCanceled.user.lastName}</td>
                                                                         <td>${ordersCanceled.user.login}</td>
@@ -294,7 +294,7 @@
                                                                     <tr>
                                                                         <td>${ordersCl.id}</td>
                                                                         <td>${ordersCl.date}</td>
-                                                                        <td>${ordersCl.repairsTypes}</td>
+                                                                        <td>${ordersCl.repairType}</td>
                                                                         <td>${ordersCl.user.firstName}</td>
                                                                         <td>${ordersCl.user.lastName}</td>
                                                                         <td>${ordersCl.user.login}</td>

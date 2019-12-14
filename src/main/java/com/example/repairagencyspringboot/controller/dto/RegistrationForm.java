@@ -18,6 +18,15 @@ public class RegistrationForm {
     public RegistrationForm() {
     }
 
+    public RegistrationForm(@NotNull String first_name, @NotNull String last_name, @NotNull String phone, @NotNull String login, @NotNull String password, String password_confirm) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.phone = phone;
+        this.login = login;
+        this.password = password;
+        this.password_confirm = password_confirm;
+    }
+
     public String getPhone() {
         return phone;
     }

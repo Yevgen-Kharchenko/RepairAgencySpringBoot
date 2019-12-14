@@ -35,38 +35,38 @@
                     <div class="col-xs-8">
                         <div class="grid-element min-height-lg-204">
                             <div class="offset-top-20 offset-md-top-20">
-                                <h5>${order.repairsTypes}</h5>
+                                <h5>${order.repairType}</h5>
                                 <hr>
                                 <article class="post-info">
                                     <div class="unit unit-spacing-md unit-sm-horizontal">
 
                                         <c:choose>
-                                            <c:when test="${order.repairsTypes=='REFRIGERATOR'}">
+                                            <c:when test="${order.repairType=='REFRIGERATOR'}">
                                                 <div class="unit-left">
                                                     <figure><img src="images/services-5-146x156.png" alt="" width="170" height="170"/></figure>
                                                 </div>
                                             </c:when>
-                                            <c:when test="${order.repairsTypes=='ICE_MAKER'}">
+                                            <c:when test="${order.repairType=='ICE_MAKER'}">
                                                 <div class="unit-left">
                                                     <figure><img src="images/services-1-146x156.png" alt="" width="170" height="170"/></figure>
                                                 </div>
                                             </c:when>
-                                            <c:when test="${order.repairsTypes=='STOVE'}">
+                                            <c:when test="${order.repairType=='STOVE'}">
                                                 <div class="unit-left">
                                                     <figure><img src="images/services-2-146x156.png" alt="" width="170" height="170"/></figure>
                                                 </div>
                                             </c:when>
-                                            <c:when test="${order.repairsTypes=='MICROWAVE'}">
+                                            <c:when test="${order.repairType=='MICROWAVE'}">
                                                 <div class="unit-left">
                                                     <figure><img src="images/services-3-146x156.png" alt="" width="170" height="170"/></figure>
                                                 </div>
                                             </c:when>
-                                            <c:when test="${order.repairsTypes=='WASHER'}">
+                                            <c:when test="${order.repairType=='WASHER'}">
                                                 <div class="unit-left">
                                                     <figure><img src="images/services-4-146x156.png" alt="" width="170" height="170"/></figure>
                                                 </div>
                                             </c:when>
-                                            <c:when test="${order.repairsTypes=='RANGE_HOOD'}">
+                                            <c:when test="${order.repairType=='RANGE_HOOD'}">
                                                 <div class="unit-left">
                                                     <figure><img src="images/services-6-146x156.png" alt="" width="170" height="170"/></figure>
                                                 </div>
@@ -88,7 +88,7 @@
                             </div>
                             <div class="offset-top-60 offset-md-top-88">
 
-                                <h5><spring:message code="comments"/></h5>
+                                <h5><spring:message code="comment"/></h5>
                                 <hr>
                                 <div class="comment-group">
                                     <article class="comment">

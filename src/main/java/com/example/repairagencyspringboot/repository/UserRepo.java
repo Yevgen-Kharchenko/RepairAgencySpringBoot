@@ -9,6 +9,8 @@ import java.util.List;
 
 public interface UserRepo extends CrudRepository<User, Long> {
 
+    boolean existsByLogin(String login);
+
     User findByLogin(String login);
 
     Page<User> findAll(Pageable pageable);

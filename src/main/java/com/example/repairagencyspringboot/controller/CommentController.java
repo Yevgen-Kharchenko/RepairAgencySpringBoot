@@ -2,7 +2,8 @@ package com.example.repairagencyspringboot.controller;
 
 import com.example.repairagencyspringboot.controller.dto.CommentForm;
 import com.example.repairagencyspringboot.controller.dto.StatusForm;
-import com.example.repairagencyspringboot.model.Comments;
+import com.example.repairagencyspringboot.model.Comment;
+import com.example.repairagencyspringboot.service.CommentsService;
 import com.example.repairagencyspringboot.service.OrderService;
 import com.example.repairagencyspringboot.service.UserService;
 import org.slf4j.Logger;
@@ -12,12 +13,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(value = "/order-comment")
 public class CommentController {
     private static final Logger LOG = LoggerFactory.getLogger(CommentController.class);
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private CommentsService commentsService;
+
+
     @Autowired
     private UserService userService;
 
@@ -29,10 +37,12 @@ public class CommentController {
         model.addAttribute("user", userService.getCurrentUser());
         LOG.info("addAttribute user" + userService.getCurrentUser());
 
-        model.addAttribute("firstComment", orderService.getFirstCommentByOrderId(orderId));
-        LOG.info("addAttribute firstComment" + orderService.getFirstCommentByOrderId(orderId));
-        model.addAttribute("comments", orderService.getCommentsByOrderId(orderId));
-        LOG.info("addAttribute comments" + orderService.getCommentsByOrderId(orderId));
+        List<Comment> comments = commentsService.getCommentsByOrderId(orderId);
+        Comment firstComment = comments.remove(0);
+        model.addAttribute("firstComment", firstComment);
+        LOG.info("addAttribute firstComment" + firstComment);
+        model.addAttribute("comments", comments);
+        LOG.info("addAttribute comments" + comments);
         model.addAttribute("commentForm", new CommentForm());
         LOG.info("addAttribute commentForm" + new CommentForm());
         model.addAttribute("statusForm", new StatusForm());
@@ -43,7 +53,7 @@ public class CommentController {
     @PostMapping
     public String comment(@ModelAttribute("commentForm") CommentForm form, Model model) {
         LOG.info("CommentForm {}", form);
-        Comments comment = orderService.addNewComment(form);
+        Comment comment = commentsService.addNewComment(form);
 
         if (comment == null) {
             model.addAttribute("notification", "Message must be longer than 10 characters");

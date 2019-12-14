@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "comments")
-public class Comments extends BaseEntity {
+public class Comment extends BaseEntity {
 
     @Column(name = "date", columnDefinition = "DATE")
     private LocalDate date;
@@ -19,25 +19,25 @@ public class Comments extends BaseEntity {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "orders_id", referencedColumnName = "id")
-    private Orders orders;
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
+    private Order order;
 
-    public Comments() {
+    public Comment() {
     }
 
-    public Comments(LocalDate date, String comment, User user, Orders orders) {
+    public Comment(LocalDate date, String comment, User user, Order order) {
         this.date = date;
         this.comment = comment;
         this.user = user;
-        this.orders = orders;
+        this.order = order;
     }
 
-    public Comments(Long id, LocalDate date, String comment, User user, Orders orders) {
+    public Comment(Long id, LocalDate date, String comment, User user, Order order) {
         super(id);
         this.date = date;
         this.comment = comment;
         this.user = user;
-        this.orders = orders;
+        this.order = order;
     }
 
     public LocalDate getDate() {
@@ -64,29 +64,29 @@ public class Comments extends BaseEntity {
         this.user = user;
     }
 
-    public Orders getOrders() {
-        return orders;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrders(Orders orders) {
-        this.orders = orders;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Comments)) return false;
+        if (!(o instanceof Comment)) return false;
         if (!super.equals(o)) return false;
-        Comments comments = (Comments) o;
-        return getDate().equals(comments.getDate()) &&
-                getComment().equals(comments.getComment()) &&
-                getUser().equals(comments.getUser()) &&
-                getOrders().equals(comments.getOrders());
+        Comment comment = (Comment) o;
+        return getDate().equals(comment.getDate()) &&
+                getComment().equals(comment.getComment()) &&
+                getUser().equals(comment.getUser()) &&
+                getOrder().equals(comment.getOrder());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getDate(), getComment(), getUser(), getOrders());
+        return Objects.hash(super.hashCode(), getDate(), getComment(), getUser(), getOrder());
     }
 
     @Override
@@ -95,7 +95,7 @@ public class Comments extends BaseEntity {
                 "date=" + date +
                 ", comment='" + comment + '\'' +
                 ", user=" + user +
-                ", order=" + orders +
+                ", order=" + order +
                 '}';
     }
 }

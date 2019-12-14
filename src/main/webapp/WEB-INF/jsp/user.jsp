@@ -40,7 +40,7 @@
                         <tr>
                             <td>${orders.id}</td>
                             <td>${orders.date}</td>
-                            <td>${orders.repairsTypes}</td>
+                            <td>${orders.repairType}</td>
                             <td>${orders.price}</td>
                             <td>${orders.status}</td>
                             <td>
