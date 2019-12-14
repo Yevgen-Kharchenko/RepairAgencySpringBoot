@@ -2,11 +2,9 @@ package com.example.repairagencyspringboot.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -20,7 +18,7 @@ public class CustomExceptionHandler {
     @ExceptionHandler(EntityNotFoundException.class)
     public final ModelAndView handleEntityNotFound(EntityNotFoundException ex) {
         ModelAndView view = new ModelAndView("404");
-        LOG.info("EntityNotFoundException"+ex);
+        LOG.info("EntityNotFoundException" + ex);
         List<String> details = new ArrayList<>();
         details.add(ex.getLocalizedMessage());
 
@@ -34,11 +32,10 @@ public class CustomExceptionHandler {
     }
 
     // All 404
-
     @ExceptionHandler(RuntimeException.class)
     public final String noHandlerFound(RuntimeException ex) {
         ModelAndView view = new ModelAndView("404");
-        LOG.info("RuntimeException"+ex);
+        LOG.info("RuntimeException" + ex);
         List<String> details = new ArrayList<>();
         details.add(ex.getLocalizedMessage());
 
@@ -55,7 +52,7 @@ public class CustomExceptionHandler {
     @ExceptionHandler(AccessDeniedException.class)
     public final ModelAndView handleAuthorization(AccessDeniedException ex) {
         ModelAndView view = new ModelAndView("403");
-        LOG.info("AccessDeniedException"+ex);
+        LOG.info("AccessDeniedException" + ex);
         List<String> details = new ArrayList<>();
         details.add(ex.getLocalizedMessage());
 
@@ -72,7 +69,7 @@ public class CustomExceptionHandler {
     @ExceptionHandler(Exception.class)//Throwable.class
     public final ModelAndView handleException(Exception ex) {
         ModelAndView view = new ModelAndView("500");
-        LOG.info("Exception"+ex);
+        LOG.info("Exception" + ex);
         List<String> details = new ArrayList<>();
         details.add(ex.getLocalizedMessage());
 

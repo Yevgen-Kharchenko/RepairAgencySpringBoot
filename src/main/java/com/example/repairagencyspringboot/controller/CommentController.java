@@ -1,8 +1,8 @@
 package com.example.repairagencyspringboot.controller;
 
-import com.example.repairagencyspringboot.entity.Comments;
-import com.example.repairagencyspringboot.dto.CommentForm;
-import com.example.repairagencyspringboot.dto.StatusForm;
+import com.example.repairagencyspringboot.controller.dto.CommentForm;
+import com.example.repairagencyspringboot.controller.dto.StatusForm;
+import com.example.repairagencyspringboot.model.Comments;
 import com.example.repairagencyspringboot.service.OrderService;
 import com.example.repairagencyspringboot.service.UserService;
 import org.slf4j.Logger;
@@ -30,7 +30,7 @@ public class CommentController {
         LOG.info("addAttribute user" + userService.getCurrentUser());
 
         model.addAttribute("firstComment", orderService.getFirstCommentByOrderId(orderId));
-        LOG.info("addAttribute firstComment" +  orderService.getFirstCommentByOrderId(orderId));
+        LOG.info("addAttribute firstComment" + orderService.getFirstCommentByOrderId(orderId));
         model.addAttribute("comments", orderService.getCommentsByOrderId(orderId));
         LOG.info("addAttribute comments" + orderService.getCommentsByOrderId(orderId));
         model.addAttribute("commentForm", new CommentForm());
@@ -45,23 +45,23 @@ public class CommentController {
         LOG.info("CommentForm {}", form);
         Comments comment = orderService.addNewComment(form);
 
-        if(comment == null){
+        if (comment == null) {
             model.addAttribute("notification", "Message must be longer than 10 characters");
-            return  "redirect:/order-comment?orderId="+form.getOrderId();
+            return "redirect:/order-comment?orderId=" + form.getOrderId();
         }
 
-        return "redirect:/order-comment?orderId="+form.getOrderId();
+        return "redirect:/order-comment?orderId=" + form.getOrderId();
     }
 
     @PostMapping(value = "status")
     public String status(@ModelAttribute("statusForm") StatusForm form, Model model) {
         LOG.info("StatusForm {}", form);
 
-        if(orderService.changeStatus(form)){
+        if (orderService.changeStatus(form)) {
             model.addAttribute("notification", "Order status changed!");
-            return "redirect:/order-comment?orderId="+form.getOrderId();
+            return "redirect:/order-comment?orderId=" + form.getOrderId();
         }
 
-        return "redirect:/order-comment?orderId="+form.getOrderId();
+        return "redirect:/order-comment?orderId=" + form.getOrderId();
     }
 }

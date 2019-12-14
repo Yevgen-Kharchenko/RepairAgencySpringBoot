@@ -1,7 +1,7 @@
 package com.example.repairagencyspringboot.controller;
 
-import com.example.repairagencyspringboot.entity.Feedback;
-import com.example.repairagencyspringboot.dto.FeedbackForm;
+import com.example.repairagencyspringboot.controller.dto.FeedbackForm;
+import com.example.repairagencyspringboot.model.Feedback;
 import com.example.repairagencyspringboot.repository.FeedbackRepo;
 import com.example.repairagencyspringboot.service.FeedbackService;
 import org.slf4j.Logger;
@@ -35,13 +35,13 @@ public class FeedbackController {
     }
 
     @PostMapping
-    public String feedback(@Valid @ModelAttribute("feedbackForm")FeedbackForm feedbackForm, BindingResult error, Model model){
+    public String feedback(@Valid @ModelAttribute("feedbackForm") FeedbackForm feedbackForm, BindingResult error, Model model) {
         LOG.info("Form {}", feedbackForm);
-        if(error.hasErrors()){
+        if (error.hasErrors()) {
             return "feedback";
         }
         Feedback feedback = feedbackService.addFeedback(feedbackForm);
-        if(feedback == null){
+        if (feedback == null) {
             error.rejectValue("feedbackMessage", "Error");
             model.addAttribute("notification", "Message must be longer than 10 characters");
             return "feedback";

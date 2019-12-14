@@ -1,14 +1,13 @@
 package com.example.repairagencyspringboot.service;
 
-
-import com.example.repairagencyspringboot.entity.Comments;
-import com.example.repairagencyspringboot.entity.Orders;
-import com.example.repairagencyspringboot.entity.RepairsTypes;
-import com.example.repairagencyspringboot.entity.User;
-import com.example.repairagencyspringboot.enums.Status;
-import com.example.repairagencyspringboot.dto.CommentForm;
-import com.example.repairagencyspringboot.dto.OrderForm;
-import com.example.repairagencyspringboot.dto.StatusForm;
+import com.example.repairagencyspringboot.controller.dto.CommentForm;
+import com.example.repairagencyspringboot.controller.dto.OrderForm;
+import com.example.repairagencyspringboot.controller.dto.StatusForm;
+import com.example.repairagencyspringboot.model.Comments;
+import com.example.repairagencyspringboot.model.Orders;
+import com.example.repairagencyspringboot.model.RepairsTypes;
+import com.example.repairagencyspringboot.model.User;
+import com.example.repairagencyspringboot.model.enums.Status;
 import com.example.repairagencyspringboot.repository.CommentsRepo;
 import com.example.repairagencyspringboot.repository.OrderRepo;
 import com.example.repairagencyspringboot.repository.RepairsTypesRepo;
@@ -17,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -36,7 +36,13 @@ public class OrderService {
     @Autowired
     private RepairsTypesRepo repairsTypesRepo;
 
-
+    /**
+     * Converts data from OrderForm to Order and stores it into DB
+     *
+     * @param form
+     * @return
+     */
+    @Transactional
     public Orders addOrder(OrderForm form) {
         if (smallMessage(form.getMessage()) || (form.getRepairTypeName().equals("NONE"))) {
             return null;
@@ -56,15 +62,32 @@ public class OrderService {
         return order;
     }
 
+    /**
+     * Verifies the length of the message from OrderForm and returns True/False
+     *
+     * @param message
+     * @return
+     */
     private boolean smallMessage(String message) {
         return message.length() < 10;
     }
 
+    /**
+     * Gets List<RepairsTypes> from repairsTypes Repository
+     *
+     * @return
+     */
     public List<RepairsTypes> getRepairTypesNames() {
         List<RepairsTypes> repairTypesNames = repairsTypesRepo.findAll();
         return repairTypesNames;
     }
 
+    /**
+     * Finds Order from the DB by the ID
+     *
+     * @param id
+     * @return
+     */
     public Orders getOrderById(Long id) {
 
         Orders order = null;
@@ -78,18 +101,36 @@ public class OrderService {
         return order;
     }
 
+    /**
+     * Gets list of Comments from DB by Order ID
+     *
+     * @param id
+     * @return
+     */
     public List<Comments> getCommentsByOrderId(Long id) {
         List<Comments> comments = commentsRepo.findAllByOrders(getOrderById(id));
         comments.remove(0);
         return comments;
     }
 
+    /**
+     * Gets the first Comment from the List of Comments by Order ID
+     *
+     * @param id
+     * @return
+     */
     public Comments getFirstCommentByOrderId(Long id) {
         List<Comments> comments = commentsRepo.findAllByOrders(getOrderById(id));
         Comments comment = comments.get(0);
         return comment;
     }
 
+    /**
+     * Converts data from CommentForm to Comment and stores it into DB
+     *
+     * @param form
+     * @return
+     */
     public Comments addNewComment(CommentForm form) {
         if (smallMessage(form.getMessage())) {
             return null;
@@ -97,15 +138,20 @@ public class OrderService {
         User user = userService.getCurrentUser();
         Comments comment = new Comments(LocalDate.now(),
                 form.getMessage(), user,
-                getOrderById(Long.parseLong(form.getOrderId())) );
+                getOrderById(Long.parseLong(form.getOrderId())));
 
         return commentsRepo.save(comment);
     }
 
-
+    /**
+     * Changes the Status of the Order depending on the StatusForm
+     *
+     * @param form
+     * @return
+     */
     public boolean changeStatus(StatusForm form) {
         Orders order = getOrderById(Long.parseLong(form.getOrderId()));
-        if(form.getPrice()!=null){
+        if (form.getPrice() != null) {
             order.setPrice(Double.parseDouble(form.getPrice()));
         }
         order.setStatus(Status.valueOf(form.getStatus()));

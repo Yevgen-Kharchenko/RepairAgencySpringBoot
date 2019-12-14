@@ -1,10 +1,10 @@
 package com.example.repairagencyspringboot.service;
 
-import com.example.repairagencyspringboot.entity.User;
-import com.example.repairagencyspringboot.enums.Role;
-import com.example.repairagencyspringboot.dto.ProfileForm;
-import com.example.repairagencyspringboot.dto.RegistrationForm;
-import com.example.repairagencyspringboot.dto.UserProfileForm;
+import com.example.repairagencyspringboot.controller.dto.ProfileForm;
+import com.example.repairagencyspringboot.controller.dto.RegistrationForm;
+import com.example.repairagencyspringboot.controller.dto.UserProfileForm;
+import com.example.repairagencyspringboot.model.User;
+import com.example.repairagencyspringboot.model.enums.Role;
 import com.example.repairagencyspringboot.repository.UserRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,12 +29,26 @@ public class UserService {
     @Resource
     private PasswordEncoder passwordEncoder;
 
+    /**
+     * Validates the User's login and verifies whether it corresponds with the Password
+     *
+     * @param login
+     * @param password
+     * @return
+     */
     public Optional<User> validateUser(String login, String password) {
         User user = userRepo.findByLogin(login);
         return user != null && user.getPassword().equals(password)
                 ? Optional.of(user) : Optional.empty();
     }
 
+    /**
+     * Converts data from RegistrationForm to User and stores it into DB
+     *
+     * @param form
+     * @param role
+     * @return
+     */
     public User registerUser(RegistrationForm form, Role role) {
         LOG.info("Register user");
         if (loginExist(form.getLogin())) {
@@ -48,6 +62,12 @@ public class UserService {
         return userRepo.save(user);
     }
 
+    /**
+     * Gets current authorized User from Context
+     *
+     * @return
+     * @throws NotFoundException
+     */
     public User getCurrentUser() throws NotFoundException {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -68,10 +88,22 @@ public class UserService {
         return u;
     }
 
+    /**
+     * Checks if the Login exists in User Repository
+     *
+     * @param login
+     * @return
+     */
     private boolean loginExist(String login) {
         return userRepo.findByLogin(login) != null;
     }
 
+    /**
+     * Converts data from ProfileForm to User and updates it in DB
+     *
+     * @param profileForm
+     * @return
+     */
     public User updateUser(ProfileForm profileForm) {
         LOG.info("Edit profile");
         User user = getCurrentUser();
@@ -84,21 +116,33 @@ public class UserService {
         return userRepo.save(user);
     }
 
+    /**
+     * Finds User in DB by ID
+     *
+     * @param id
+     * @return
+     */
     public User getUserById(Long id) {
-        User userProfile=null;
+        User userProfile = null;
         Optional<User> user = userRepo.findById(id);
         if (user.isPresent()) {
             userProfile = user.get();
         } else {
             LOG.info("Person not found!");
         }
-        LOG.info("user for Edit: "+userProfile);
+        LOG.info("user for Edit: " + userProfile);
         return userProfile;
     }
 
+    /**
+     * Converts data from UserProfileForm to User and updates it in DB
+     *
+     * @param form
+     * @return
+     */
     public User updateUserProfile(UserProfileForm form) {
         LOG.info("Edit user profile");
-        Long id =Long.parseLong(form.getUserId());
+        Long id = Long.parseLong(form.getUserId());
         User user = getUserById(id);
 
         user.setLogin(form.getLogin());
@@ -111,13 +155,22 @@ public class UserService {
         return userRepo.save(user);
     }
 
+    /**
+     * Gets the List of Roles from Enums
+     *
+     * @return
+     */
     public List<String> getRoleNames() {
         return Stream.of(Role.values())
                 .map(Role::name)
                 .collect(Collectors.toList());
     }
 
-
+    /**
+     * Deletes User from User Repository
+     *
+     * @param id
+     */
     public void deleteUser(Long id) {
         userRepo.deleteById(id);
     }

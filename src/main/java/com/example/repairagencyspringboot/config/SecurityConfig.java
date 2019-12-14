@@ -1,11 +1,9 @@
 package com.example.repairagencyspringboot.config;
 
 import com.example.repairagencyspringboot.exception.CustomAccessDeniedHandler;
-import com.example.repairagencyspringboot.exception.CustomExceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -55,13 +53,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return authenticationManager();
     }
 
+    @Autowired
+    private CustomAccessDeniedHandler accessDeniedHandler;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());
     }
-
-        @Autowired
-        private CustomAccessDeniedHandler accessDeniedHandler;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -73,9 +71,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers("/admin", "/user", "/manager", "/master",
                         "/template", "/user-profile", "/users", "/h2-console/**").hasRole("ADMIN")
-                .antMatchers("/manager").hasRole("MANAGER")
-                .antMatchers("/master").hasRole("MASTER")
-                .antMatchers("/user").hasRole("CUSTOMER")
+                .antMatchers("/manager").hasAnyRole("ADMIN", "MANAGER")
+                .antMatchers("/master").hasAnyRole("ADMIN", "MASTER")
+                .antMatchers("/user").hasAnyRole("ADMIN", "CUSTOMER")
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().accessDeniedHandler(accessDeniedHandler)
@@ -91,4 +89,3 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 }
-

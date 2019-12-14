@@ -1,10 +1,8 @@
 package com.example.repairagencyspringboot.service;
 
-
-import com.example.repairagencyspringboot.entity.User;
+import com.example.repairagencyspringboot.model.User;
 import com.example.repairagencyspringboot.repository.UserRepo;
-import com.example.repairagencyspringboot.security.UserDetailsImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.repairagencyspringboot.service.security.UserDetailsImpl;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -23,6 +21,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         this.session = session;
     }
 
+    /**
+     * Finds User in the DB by Login and loads User in the session
+     *
+     * @param login
+     * @return
+     * @throws UsernameNotFoundException
+     */
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
